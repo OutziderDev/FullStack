@@ -1,8 +1,11 @@
-# React + Vite
+# Full Stack Open - Helsinki
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Carpetas de desarrollo de ejercicios del curso FullStack Para la seccion 1
 
-Currently, two official plugins are available:
+Ejercicios Desarrollados:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 1.1 CourseInfo (Separar en componentes)
+- 1.2 CourseInfo (Pasar Props a componentes y reciclaje)
+- 1.3 CourseInfo (Aplicando JavaScript, pasando informacion a objetos)
+- 1.4 CourseInfo (Convirtiendo Objetos a Array de Objetos)
+- 1.5 CourseInfo ()

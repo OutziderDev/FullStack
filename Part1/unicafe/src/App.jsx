@@ -3,24 +3,50 @@ import { useState } from 'react'
 //Definiendo Componentes
 const Button = ({onClick,Text}) => <button onClick={onClick}>{Text}</button>
 const Title = ({title}) => <h2>{title}</h2>
-const StatisticLine = ({textResult,data}) => <p><b>{textResult}:</b>  {data}</p>
+const StatisticLine = ({textResult,data}) =><>{textResult}  {data}</>
 
 const Statistics = (props) => {
   if(props.totalVotes === 0) return (<Title title={"No Feedback give"}/>)
   return(
     <>
-      <StatisticLine textResult={"Good"} data={props.good}/>
-      <StatisticLine textResult={"Neutral"} data={props.neutral}/>
-      <StatisticLine textResult={"Bad"} data={props.bad}/>
-      <hr />
-      <Title title={"More Info"}/>
-      <StatisticLine textResult={"All"}       data={props.totalVotes}/>
-      <StatisticLine textResult={"Average"}   data={props.func1}/>
-      <StatisticLine textResult={"Positives"} data={props.func2}/>
+      <table>
+        <thead>
+          <tr>
+            <th> </th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><StatisticLine textResult={"Good"}/></td>
+            <td><StatisticLine data={props.good}/></td>
+          </tr>
+          <tr>
+            <td><StatisticLine textResult={"Neutral"}/></td>
+            <td><StatisticLine data={props.neutral}/></td>
+          </tr>
+          <tr>
+            <td><StatisticLine textResult={"Bad"}/></td>
+            <td><StatisticLine  data={props.bad}/></td>
+          </tr>
+          
+          <tr>
+            <td><StatisticLine textResult={"All"}/></td>
+            <td><StatisticLine  data={props.totalVotes}/></td>
+          </tr>
+          <tr>
+            <td><StatisticLine textResult={"Average"} /></td>
+            <td><StatisticLine data={props.func1}/></td>
+          </tr>
+          <tr>
+            <td><StatisticLine textResult={"Positives"}/></td>
+            <td><StatisticLine data={props.func2}/></td>
+          </tr>
+        </tbody>
+      </table>
     </>
   )
 }
-
 
 function App() {
   //Const de estados

@@ -8,4 +8,4 @@ Ejercicios Desarrollados:
 - 1.2 CourseInfo (Pasar Props a componentes y reciclaje)
 - 1.3 CourseInfo (Aplicando JavaScript, pasando informacion a objetos)
 - 1.4 CourseInfo (Convirtiendo Objetos a Array de Objetos)
-- 1.5 CourseInfo ()
+- 1.5 CourseInfo (Integrando toda la informacion en un solo Objeto)

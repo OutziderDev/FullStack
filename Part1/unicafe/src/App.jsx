@@ -3,20 +3,20 @@ import { useState } from 'react'
 //Definiendo Componentes
 const Button = ({onClick,Text}) => <button onClick={onClick}>{Text}</button>
 const Title = ({title}) => <h2>{title}</h2>
-const Result = ({textResult,data}) => <p><b>{textResult}:</b>  {data}</p>
+const StatisticLine = ({textResult,data}) => <p><b>{textResult}:</b>  {data}</p>
 
 const Statistics = (props) => {
+  if(props.totalVotes === 0) return (<Title title={"No Feedback give"}/>)
   return(
     <>
-      <Title title={"Statistics"}/>
-      <Result textResult={"Good"} data={props.good}/>
-      <Result textResult={"Neutral"} data={props.neutral}/>
-      <Result textResult={"Bad"} data={props.bad}/>
+      <StatisticLine textResult={"Good"} data={props.good}/>
+      <StatisticLine textResult={"Neutral"} data={props.neutral}/>
+      <StatisticLine textResult={"Bad"} data={props.bad}/>
       <hr />
       <Title title={"More Info"}/>
-      <Result textResult={"All"}       data={props.totalVotes}/>
-      <Result textResult={"Average"}   data={props.func1}/>
-      <Result textResult={"Positives"} data={props.func2}/>
+      <StatisticLine textResult={"All"}       data={props.totalVotes}/>
+      <StatisticLine textResult={"Average"}   data={props.func1}/>
+      <StatisticLine textResult={"Positives"} data={props.func2}/>
     </>
   )
 }
@@ -65,6 +65,7 @@ function App() {
       <Button Text={"Neutral"} onClick={handleNeutralClick}/>
       <Button Text={"Bad"} onClick={handleBadClick}/>
       <hr />
+      <Title title={"Statistics"}/>
       <Statistics good={good} neutral={neutral} bad={bad} totalVotes={totalVotes} func1={scoreAverague()} func2={positivePercentage()} />
     </>
   )

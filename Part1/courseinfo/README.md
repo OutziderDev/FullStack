@@ -1,6 +1,6 @@
 # Full Stack Open - Helsinki
 
-Carpetas de desarrollo de ejercicios del curso FullStack Para la seccion 1
+Carpetas de desarrollo de ejercicios del curso FullStack Para la seccion 1 - CourseInfo
 
 Ejercicios Desarrollados:
 

@@ -8,4 +8,5 @@ En esta parte destacan varios ejercicios, sin embargo no todos son desarrollable
 - 0.2 CSS (Lectura de conceptos basicos de css en el post en mozilla)
 - 0.3 Formularios HTML 
 - 0.4 Desarrollo de nuevo diagrama de notas.
-- 0.5 Creacion de Diagrama de aplicacion de una sola página.  
+- 0.5 Creacion de Diagrama de aplicacion de una sola página.
+- 0.6 Desarrollo del Diagrama de nueva nota en la SPA con Mermaid

@@ -6,7 +6,7 @@ del curso y a su vez estas se subdividen en subcarpetas donde estan las activida
 las solicitan en el curso. En cada carpeta se detallan los ejercicios practicados.
 
 ### Partes Desarrolladas
-- Parte 0, Reforzando conocimientos de consola web y la Red. 
+- Parte 0, Reforzando conocimientos de consola web y diferentes utilidades. 
 - Parte 1, Practicando con React, variables de estado, controles de eventos y desestructuración. 
 
 

@@ -1,3 +1,3 @@
-const ListUnique = ({name}) => <li>{name}</li>
+const ListUnique = ({name,number}) => <li>{name} - {number}</li>
 
 export default ListUnique;

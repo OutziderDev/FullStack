@@ -11,7 +11,9 @@ Carpetas donde se encuentran desglosados los siguientes ejercicios
 - 2.5 CourseInfo (paso 10: Definiendo <Course /> como un modulo separado para importarlo en el <App>)
 
 ## Part 2 - B
-- 
+- 2.6 PhoneBook (paso 1: Crear una agenda telefonica sencilla, utilizando formularios y estados y controladores de evento) 
+- 2.7 PhoneBook (paso 2: Restringuir el ingreso de nombres repetidos y utilzar Some() para comparar)
+- 2.8 PhoneBook (paso 3: Introducir los numeros de telefonos con un <Input> individual y mostrarlo en la guia telefonica)
 
 ## Part 2 - C
 - 

@@ -18,7 +18,7 @@ Carpetas donde se encuentran desglosados los siguientes ejercicios
 - 2.10 PhoneBook (paso 5: Refactorizando la aplicacion para extrar todos los componentes necesarios aparte)
 
 ## Part 2 - C
-- 2.11 PhoneBook (Paso 6:)
+- 2.11 PhoneBook (Paso 6: Extraer los datos de usuarios directamente del Server con el Hook Effect)
 
 ## Part 2 - D
 

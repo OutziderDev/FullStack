@@ -15,9 +15,10 @@ Carpetas donde se encuentran desglosados los siguientes ejercicios
 - 2.7 PhoneBook (paso 2: Restringuir el ingreso de nombres repetidos y utilzar Some() para comparar)
 - 2.8 PhoneBook (paso 3: Introducir los numeros de telefonos con un <Input> individual y mostrarlo en la guia telefonica)
 - 2.9 PhoneBook (paso 4: Implementando un campo de busqueda para filtrar personas por nombre)
+- 2.10 PhoneBook (paso 5: Refactorizando la aplicacion para extrar todos los componentes necesarios aparte)
 
 ## Part 2 - C
-- 
+- 2.11 PhoneBook (Paso 6:)
 
 ## Part 2 - D
 

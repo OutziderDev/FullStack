@@ -1,19 +1,18 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Title from './Components/Title';
 import TotalList from './Components/TotalList';
 import Form from './Components/Form';
 import SearchInput from "./Components/SearchInput";
+import axio from 'axios'
 
  function App() {
-  const [persons,setPerson] = useState([
-    { name: 'Arto Hellas', number: '040-123456', id: 1 },
-    { name: 'Ada Lovelace', number: '39-44-5323523', id: 2 },
-    { name: 'Dan Abramov', number: '12-43-234345', id: 3 },
-    { name: 'Mary Poppendieck', number: '39-23-6423122', id: 4 }
-  ]);
+  // useStates and Effects
+  const [persons,setPerson] = useState([]);
   const [newName, setNewName] = useState('');
   const [newPhone, setNewPhone] = useState('');
   const [search,setSearch] = useState('');
+  const hook = () =>{axio .get('http://localhost:3001/persons').then(Resp => setPerson(Resp.data))}
+  useEffect(hook,[])
 
   //Funciones
   const handlerAddPerson = (event) =>{
@@ -27,7 +26,7 @@ import SearchInput from "./Components/SearchInput";
     if(isDuplicate){
       alert(`${newName} is already added to phonebook`);
     }else{
-      const addNewPerson = {name:newName,number:newPhone};
+      const addNewPerson = {name:newName,number:newPhone,id:persons.length+1};
       setPerson(persons.concat(addNewPerson)); 
     }
 

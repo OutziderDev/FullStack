@@ -1,9 +1,6 @@
 # Full Stack Open - Helsinki
 
-Repositorio dedicado a almacenar todas las practicas realizadas en el Bootcamp de la universidad de Helsinki 
-a travez del FullStackOpen. El esquema de carpetas corresponde a una carpeta padre por cada parte del contenido
-del curso y a su vez estas se subdividen en subcarpetas donde estan las actividades enumeradas conforme 
-las solicitan en el curso. En cada carpeta se detallan los ejercicios practicados.
+Este repositorio está dedicado a almacenar todas las prácticas realizadas durante el programa FullStack de la Universidad de Helsinki. La estructura de carpetas consiste en una carpeta principal para cada módulo del curso, y cada una de estas se subdivide en subcarpetas que contienen las actividades enumeradas según lo solicitado en el curso. En cada carpeta se detallan los ejercicios realizados, proporcionando una organización clara y accesible para el estudio.
 
 ### Partes Desarrolladas
 - Parte 0, Reforzando conocimientos de consola web y diferentes utilidades. 

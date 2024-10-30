@@ -1,0 +1,11 @@
+# Full Stack Open - Helsinki
+
+Carpetas de desarrollo de ejercicios del curso FullStack Para la Seccion 2 - PhoneBook
+* entre los capitulos desarrollados se encuentran los siguientes:
+
+## Part 2 - B
+- 2.6 PhoneBook (paso 1: Crear una agenda telefonica sencilla, utilizando formularios y estados y controladores de evento) 
+- 2.7 PhoneBook (paso 2: Restringuir el ingreso de nombres repetidos y utilzar Some() para comparar)
+- 2.8 PhoneBook (paso 3: Introducir los numeros de telefonos con un <Input> individual y mostrarlo en la guia telefonica)
+- 2.9 PhoneBook (paso 4: Implementando un campo de busqueda para filtrar personas por nombre)
+- 2.10 PhoneBook (paso 5: Refactorizando la aplicacion para extrar todos los componentes necesarios aparte)

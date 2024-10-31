@@ -3,7 +3,7 @@ import Title from './Components/Title';
 import TotalList from './Components/TotalList';
 import Form from './Components/Form';
 import SearchInput from "./Components/SearchInput";
-import axio from 'axios'
+import PersonService from './Services/Node';
 
  function App() {
   // useStates and Effects
@@ -11,8 +11,7 @@ import axio from 'axios'
   const [newName, setNewName] = useState('');
   const [newPhone, setNewPhone] = useState('');
   const [search,setSearch] = useState('');
-  const hook = () =>{axio .get('http://localhost:3001/persons').then(Resp => setPerson(Resp.data))}
-  useEffect(hook,[])
+  useEffect( () => {PersonService.getAll().then(TotalPersons => setPerson(TotalPersons))},[])
 
   //Funciones
   const handlerAddPerson = (event) =>{
@@ -26,8 +25,10 @@ import axio from 'axios'
     if(isDuplicate){
       alert(`${newName} is already added to phonebook`);
     }else{
-      const addNewPerson = {name:newName,number:newPhone,id:persons.length+1};
-      setPerson(persons.concat(addNewPerson)); 
+      const addNewPerson = {name:newName,number:newPhone};
+      PersonService.postAddPeron(addNewPerson).then(newPerson =>{ 
+        setPerson(persons.concat(newPerson)); 
+      })
     }
 
     setNewName(''); setNewPhone('')

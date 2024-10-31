@@ -21,5 +21,7 @@ Carpetas donde se encuentran desglosados los siguientes ejercicios
 - 2.11 PhoneBook (Paso 6: Extraer los datos de usuarios directamente del Server con el Hook Effect)
 
 ## Part 2 - D
+- 2.12 PhoneBook (Paso 7: Agregando los datos del <Form> en servidor)
+- 2.13 PhoneBook (Paso 8: Extrayendo el codigo para que el server se maneje separado desde el backend)
 
 ## Part 2 - E

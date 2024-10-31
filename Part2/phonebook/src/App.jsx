@@ -4,6 +4,7 @@ import TotalList from './Components/TotalList';
 import Form from './Components/Form';
 import SearchInput from "./Components/SearchInput";
 import PersonService from './Services/Node';
+//console.log(PersonService.deletePerson('5c25'));
 
  function App() {
   // useStates and Effects
@@ -11,7 +12,7 @@ import PersonService from './Services/Node';
   const [newName, setNewName] = useState('');
   const [newPhone, setNewPhone] = useState('');
   const [search,setSearch] = useState('');
-  useEffect( () => {PersonService.getAll().then(TotalPersons => setPerson(TotalPersons))},[])
+  useEffect( () => {PersonService.getAll().then(TotalPersons => setPerson(TotalPersons)).catch(error => console.error("Error al obtener datos:", error));},[])
 
   //Funciones
   const handlerAddPerson = (event) =>{
@@ -26,7 +27,7 @@ import PersonService from './Services/Node';
       alert(`${newName} is already added to phonebook`);
     }else{
       const addNewPerson = {name:newName,number:newPhone};
-      PersonService.postAddPeron(addNewPerson).then(newPerson =>{ 
+      PersonService.postAddPerson(addNewPerson).then(newPerson =>{ 
         setPerson(persons.concat(newPerson)); 
       })
     }
@@ -36,6 +37,13 @@ import PersonService from './Services/Node';
   const handlerChangeInput = (event) => setNewName(event.target.value);
   const handlerPhoneInput = (event) => setNewPhone(event.target.value);
   const handlerSearchInput = (event) => setSearch(event.target.value);
+  const handlerDeletePerson = (id) => {
+    PersonService.deletePerson(id)
+                 .then(() =>{
+                    setPerson(prevPersons => prevPersons.filter(persons => persons.id !== id));
+                 })
+                 .catch(error => console.error("erdiablo paso: ",error))
+  }
   
   return (
     <> 
@@ -46,7 +54,7 @@ import PersonService from './Services/Node';
       <Form onSubmit={handlerAddPerson} valueName={newName} valuePhone={newPhone} onChangeName={handlerChangeInput} onChangePhone={handlerPhoneInput}/>
       <hr />
       <Title title={'Numbers'}/>
-      <TotalList data={persons} filter={search} />   
+      <TotalList data={persons} filter={search} handlerDeletePerson={handlerDeletePerson}/>   
     </>    
   )
 }

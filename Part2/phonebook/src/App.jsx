@@ -4,9 +4,8 @@ import TotalList from './Components/TotalList';
 import Form from './Components/Form';
 import SearchInput from "./Components/SearchInput";
 import PersonService from './Services/Node';
-//console.log(PersonService.deletePerson('5c25'));
 
- function App() {
+function App() {
   // useStates and Effects
   const [persons,setPerson] = useState([]);
   const [newName, setNewName] = useState('');
@@ -37,8 +36,9 @@ import PersonService from './Services/Node';
   const handlerChangeInput = (event) => setNewName(event.target.value);
   const handlerPhoneInput = (event) => setNewPhone(event.target.value);
   const handlerSearchInput = (event) => setSearch(event.target.value);
-  const handlerDeletePerson = (id) => {
-    PersonService.deletePerson(id)
+  const handlerDeletePerson = (id,name) => {
+    if (confirm(`Delete ${name} ?`))
+      PersonService.deletePerson(id)
                  .then(() =>{
                     setPerson(prevPersons => prevPersons.filter(persons => persons.id !== id));
                  })

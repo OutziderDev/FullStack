@@ -16,5 +16,5 @@ Carpetas de desarrollo de ejercicios del curso FullStack Para la Seccion 2 - Pho
 ## Part 2 - D
 - 2.12 PhoneBook (Paso 7: Agregando los datos del <Form> en servidor)
 - 2.13 PhoneBook (Paso 8: Extrayendo el codigo para que el server se maneje separado desde el backend)
-- 2.14 PhoneBook ()
+- 2.14 PhoneBook (Paso 9: Permitir a los usuarios borrar sus datos y mostrar <Confirm> por seguridad )
 - 2.15 PhoneBook ()

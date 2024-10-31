@@ -23,7 +23,19 @@ function App() {
     const isDuplicate = persons.some((person)=>person.name === newName)
 
     if(isDuplicate){
-      alert(`${newName} is already added to phonebook`);
+      const dataPerson = persons.find(person => person.name === newName) 
+      if(dataPerson.number === newPhone ){
+        alert(`${newName} is already added to phonebook with the same phone`);
+      } 
+      else {
+        if(confirm(`${newName} is already added, want to replace the old number with a new one?`)){
+          const newobjetfast = {...dataPerson,number:newPhone}
+           PersonService.updatePerson(dataPerson.id,newobjetfast)
+                       .then(Response => setPerson(persons.map(updateCopy => updateCopy.id !== dataPerson.id ? updateCopy : Response)))
+                       .catch(error => console.error('error,',error)) 
+        }    
+      } 
+      
     }else{
       const addNewPerson = {name:newName,number:newPhone};
       PersonService.postAddPerson(addNewPerson).then(newPerson =>{ 

@@ -3,6 +3,7 @@ import Title from './Components/Title';
 import TotalList from './Components/TotalList';
 import Form from './Components/Form';
 import SearchInput from "./Components/SearchInput";
+import Notification from "./Components/Notification";
 import PersonService from './Services/Node';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   const [newName, setNewName] = useState('');
   const [newPhone, setNewPhone] = useState('');
   const [search,setSearch] = useState('');
+  const [notiMessage,setNotiMessage] = useState(null)
   useEffect( () => {PersonService.getAll().then(TotalPersons => setPerson(TotalPersons)).catch(error => console.error("Error al obtener datos:", error));},[])
 
   //Funciones
@@ -31,7 +33,13 @@ function App() {
         if(confirm(`${newName} is already added, want to replace the old number with a new one?`)){
           const newobjetfast = {...dataPerson,number:newPhone}
            PersonService.updatePerson(dataPerson.id,newobjetfast)
-                       .then(Response => setPerson(persons.map(updateCopy => updateCopy.id !== dataPerson.id ? updateCopy : Response)))
+                       .then(Response =>
+                         setPerson(persons.map(updateCopy => updateCopy.id !== dataPerson.id ? updateCopy : Response)),
+                         setNotiMessage(`Added: ${newobjetfast.name} with new number: ${newobjetfast.number}`),
+                         setTimeout(() => {
+                          setNotiMessage(null)
+                         }, 3000)
+                        )
                        .catch(error => console.error('error,',error)) 
         }    
       } 
@@ -39,7 +47,11 @@ function App() {
     }else{
       const addNewPerson = {name:newName,number:newPhone};
       PersonService.postAddPerson(addNewPerson).then(newPerson =>{ 
-        setPerson(persons.concat(newPerson)); 
+        setPerson(persons.concat(newPerson));
+        setNotiMessage(`Added: ${addNewPerson.name}`);
+        setTimeout(() => {
+          setNotiMessage(null)
+        }, 2000); 
       })
     }
 
@@ -60,6 +72,7 @@ function App() {
   return (
     <> 
       <Title title={"Phonebook"}/>
+      <Notification message={notiMessage}/>
       <SearchInput search={search} onChangeSearch={handlerSearchInput}/>
       <hr />
       <Title title={"Add a new"}/>

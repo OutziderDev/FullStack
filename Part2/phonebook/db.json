@@ -3,7 +3,7 @@
     {
       "name": "Arto Hellas",
       "number": "040-123456",
-      "id": 1
+      "id": "1"
     },
     {
       "name": "Ada Lovelace",
@@ -26,9 +26,9 @@
       "id": "5"
     },
     {
+      "id": "6693",
       "name": "Guadalupe Quintero",
-      "number": "22-55-7784561",
-      "id": "6143"
+      "number": "22-55-7784561"
     }
   ]
 }

@@ -1,9 +1,11 @@
-const Notification = ({message}) => {
+const Notification = ({message,toClass}) => {
     if (message === null) {
         return null
     }
+
+    const forClass = toClass ? 'noteSucces' : 'noteError'
     return(
-        <div className="noteSucces">
+        <div className={forClass}>
             {message}
         </div>
     )

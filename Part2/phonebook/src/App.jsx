@@ -13,6 +13,7 @@ function App() {
   const [newPhone, setNewPhone] = useState('');
   const [search,setSearch] = useState('');
   const [notiMessage,setNotiMessage] = useState(null)
+  const [classNotification, setClassNotification] = useState(true);
   useEffect( () => {PersonService.getAll().then(TotalPersons => setPerson(TotalPersons)).catch(error => console.error("Error al obtener datos:", error));},[])
 
   //Funciones
@@ -35,12 +36,21 @@ function App() {
            PersonService.updatePerson(dataPerson.id,newobjetfast)
                        .then(Response =>
                          setPerson(persons.map(updateCopy => updateCopy.id !== dataPerson.id ? updateCopy : Response)),
+                         setClassNotification(true),
                          setNotiMessage(`Added: ${newobjetfast.name} with new number: ${newobjetfast.number}`),
                          setTimeout(() => {
                           setNotiMessage(null)
                          }, 3000)
                         )
-                       .catch(error => console.error('error,',error)) 
+                       .catch(error => {
+                          setClassNotification(false),
+                          setNotiMessage(`Ha ocurrido un error: ${error}`),
+                          setPerson(persons.filter(person => person.id !== newobjetfast.id))
+                          setTimeout(() => {
+                          setNotiMessage(null)
+                          }, 8000)
+                        }
+                       ) 
         }    
       } 
       
@@ -72,7 +82,7 @@ function App() {
   return (
     <> 
       <Title title={"Phonebook"}/>
-      <Notification message={notiMessage}/>
+      <Notification message={notiMessage} toClass={classNotification}/>
       <SearchInput search={search} onChangeSearch={handlerSearchInput}/>
       <hr />
       <Title title={"Add a new"}/>

@@ -21,3 +21,4 @@ Carpetas de desarrollo de ejercicios del curso FullStack Para la Seccion 2 - Pho
 
 ## Part 2 - E
 - 2.16 PhoneBook (Paso 11: Aplicando componentes de <Notifications> y aplicando estilos)
+- 2.17 PhoneBook (Paso 12: Solucionando problema de notificacion aplicando el .Catch a las promesas junto con diferentes <Notifications>)

@@ -17,13 +17,10 @@ const App = () => {
   
   return (
     <>
-    <h1>View Countries</h1>
-    <Filter value={filter} onChange={handlerFilter} />
-    
-    <Countries data={countries} filter={filter}/>
-
-{/*     <SelectedCountry data={countries} />
- */}    </>
+      <h1>View Countries</h1>
+      <Filter value={filter} onChange={handlerFilter} />  
+      <Countries data={countries} filter={filter}/>
+     </>
   );
 };
 

@@ -1,17 +1,17 @@
 const SelectedCountry = ({data}) => {
-    console.log(data[0].languages);
+    const lang = Object.values(data.languages)
     
     return(
     <div>
-        <h2>{data[0].name.common}</h2>
-        <p><b>Capital:</b> {data[0].capital}</p>
-        <p><b>Area:</b> {data[0].area}</p>
+        <h2>{data.name.common}</h2>
+        <p><b>Capital:</b> {data.capital}</p>
+        <p><b>Area:</b> {data.area}</p>
         <p><b>Lenguages:</b></p>
         <ul>
-            <li>algo</li>
+            { lang.map(resp=> <li key={resp}>{resp}</li>)}
         </ul>
         <div>
-            <img src={data[0].flags.png} alt="" />
+            <img src={data.flags.png} alt="" />
         </div>
     </div>
     )

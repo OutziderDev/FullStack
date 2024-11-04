@@ -19,7 +19,7 @@ const App = () => {
     <>
       <h1>View Countries</h1>
       <Filter value={filter} onChange={handlerFilter} />  
-      <Countries data={countries} filter={filter}/>
+      <Countries data={countries} filter={filter} updateFilter={setFilter}/>
      </>
   );
 };

@@ -5,6 +5,7 @@ Este repositorio está dedicado a almacenar todas las prácticas realizadas dura
 ### Partes Desarrolladas
 - Parte 0, Reforzando conocimientos de consola web y diferentes utilidades. 
 - Parte 1, Practicando con React, variables de estado, controles de eventos y desestructuración. 
+- Parte 2, Practicando con el llamado de APIs externas y mostrando datos directo desde el servidor con <Axio>, <useEffect>, APIs externas, etc.
 
 
 

@@ -29,3 +29,6 @@ Carpetas donde se encuentran desglosados los siguientes ejercicios
 ## Part 2 - E
 - 2.16 PhoneBook (Paso 11: Aplicando componentes de <Notifications> y aplicando estilos)
 - 2.17 PhoneBook (Paso 12: Solucionando problema de notificacion aplicando el .Catch a las promesas junto con diferentes <Notifications>)
+- 2.18 Countries (Paso 1: llamando a la API de Restcountries para desarrollar una App que muestre datos de diferentes paises)
+- 2.19 Countries (Paso 2: Implementando botones para ver el pais deseado de la lista elegible)
+- 2.20 Countries (Paso 3: Aplicar el axio a una API externa de datos meteorologicos para extraer la informacion del pais deseado)

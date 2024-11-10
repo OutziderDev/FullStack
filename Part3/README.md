@@ -1,13 +1,27 @@
-# Full Stack Open - Helsinki
+# Full Stack Open - Helsinki - BACKEND
 
-Carpetas donde se encuentran desglosados los siguientes ejercicios 
+Repositorio donde se encuentran desarrollados los modulos de la parte 3 sin embargo se encuentran en otro repositorio por separado en: [Repositorio Backend](https://github.com/OutziderDev/FullStack-Backend)
 
-## Part 2 - A 
+# Deploy Parte 3
+En la parte 3-B se encuentran las practicas del despligue de la aplicacion a internet, la cual podemos apreciar en el siguiente enlace:
+[Phonebook Deploy](#)
 
-- 3.1 CourseInfo (paso 6: Refactorizando modulos, integrando todo en un solo componente)
-- 3.2 CourseInfo (paso 7: Mostrar la suma de los ejercicios en el componente <Course>)
 
+## Tambien se muestra una lista de los ejercicios desarrollados en el repositorio de backend independiente
 
-## Part 2 - B
-- 3.6 PhoneBook (paso 1: Crear una agenda telefonica sencilla, utilizando formularios y estados y controladores de evento) 
-- 3.7 PhoneBook (paso 2: Restringuir el ingreso de nombres repetidos y utilzar Some() para comparar)
+#### Part 3 - A 
+
+- 3.1 Backend Phonebook (paso 1: Levantando un servidor para la API de los datos importantes de las personas que se registran en la web)
+- 3.2 Backend Phonebook (paso 2: Implementando en la API la direccion  http://localhost:3001/info para resumen basico la consulta Get)
+- 3.3 Backend Phonebook (paso 3: Implementando la ruta http://localhost:3001/api/persons/5 para mostrar informacion especifica)
+- 3.4 Backend Phonebook (paso 4: Integrando la funcion Delete para poder borrar datos de manera optima)
+- 3.5 Backend Phonebook (paso 5: Registrando nuevos datos en la API mediante POST)
+- 3.6 Backend Phonebook (paso 6: Actualizando funcion Post para aplicar validaciones por redundancia de datos)
+- 3.7 Backend Phonebook (paso 7: Instalando el middleware de morgan para mejor seguimiento de solicitudes Http)
+- 3.8 Backend Phonebook (paso 8: Configurando morgan para extraer informacion especifica de las request)
+
+#### Part  - B
+- 3.9 Backend Phonebook (paso 9: Integrando el backend desarrollado con el Frontend react de capitulos anteriores de manera local)
+- 3.10 Backend Phonebook (paso 10: Desplegando en Render.com  un webservice donde se encuentra el backend)
+- 3.11 Backend Phonebook (paso 11: Generando una build para el despliegue en formato SPA en Render.com)
+- Ver la aplicacion [Phonebook](#)

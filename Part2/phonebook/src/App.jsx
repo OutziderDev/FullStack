@@ -10,7 +10,7 @@ function App() {
   // useStates and Effects
   const [persons,setPerson] = useState([]);
   const [newName, setNewName] = useState('');
-  const [newPhone, setNewPhone] = useState('');
+  const [newPhone, setNewPhone] = useState(''); 
   const [search,setSearch] = useState('');
   const [notiMessage,setNotiMessage] = useState(null)
   const [classNotification, setClassNotification] = useState(true);
@@ -56,8 +56,11 @@ function App() {
       
     }else{
       const addNewPerson = {name:newName,number:newPhone};
+      //console.log(addNewPerson);
       PersonService.postAddPerson(addNewPerson).then(newPerson =>{ 
-        setPerson(persons.concat(newPerson));
+        //console.log(newPerson);
+        setPerson(newPerson)
+        //setPerson((prevPersons) => [...prevPersons, newPerson]);
         setNotiMessage(`Added: ${addNewPerson.name}`);
         setTimeout(() => {
           setNotiMessage(null)
@@ -65,7 +68,8 @@ function App() {
       })
     }
 
-    setNewName(''); setNewPhone('')
+    setNewName('');
+    setNewPhone('')
   }
   const handlerChangeInput = (event) => setNewName(event.target.value);
   const handlerPhoneInput = (event) => setNewPhone(event.target.value);
@@ -73,10 +77,10 @@ function App() {
   const handlerDeletePerson = (id,name) => {
     if (confirm(`Delete ${name} ?`))
       PersonService.deletePerson(id)
-                 .then(() =>{
-                    setPerson(prevPersons => prevPersons.filter(persons => persons.id !== id));
-                 })
-                 .catch(error => console.error("erdiablo paso: ",error))
+                   .then(() =>{
+                      setPerson(prevPersons => prevPersons.filter(persons => persons.id !== id));
+                    })
+                    .catch(error => console.error("erdiablo paso: ",error))
   }
   
   return (

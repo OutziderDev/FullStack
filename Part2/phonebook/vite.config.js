@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     proxy: {
       '/api' :{ 
-        target: 'https://phonebook-mpsk.onrender.com',
+        target: 'http://localhost:3001/',//'https://phonebook-mpsk.onrender.com',
         changeOrigin: true
       }
     }

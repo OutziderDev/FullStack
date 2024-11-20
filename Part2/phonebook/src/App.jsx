@@ -59,7 +59,7 @@ function App() {
       //console.log(addNewPerson);
       PersonService.postAddPerson(addNewPerson).then(newPerson =>{ 
         //console.log(newPerson);
-        setPerson(newPerson)
+        setPerson(persons.concat(newPerson))
         //setPerson((prevPersons) => [...prevPersons, newPerson]);
         setNotiMessage(`Added: ${addNewPerson.name}`);
         setTimeout(() => {

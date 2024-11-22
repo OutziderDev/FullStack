@@ -59,12 +59,21 @@ function App() {
       //console.log(addNewPerson);
       PersonService.postAddPerson(addNewPerson).then(newPerson =>{ 
         //console.log(newPerson);
-        setPerson(persons.concat(newPerson))
+        setPerson(persons.concat(newPerson));
+        setClassNotification(true);
         //setPerson((prevPersons) => [...prevPersons, newPerson]);
         setNotiMessage(`Added: ${addNewPerson.name}`);
         setTimeout(() => {
           setNotiMessage(null)
         }, 2000); 
+      })
+      .catch(error =>{//console.log(error.response.data.error)
+        setNotiMessage(error.response.data.error),
+        setClassNotification(false),
+        setTimeout(() => {
+          setNotiMessage(null),
+          setClassNotification(true)
+        }, 8000);
       })
     }
 

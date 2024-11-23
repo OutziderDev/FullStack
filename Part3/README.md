@@ -28,5 +28,16 @@ En la parte 3-B se encuentran las practicas del despligue de la aplicacion a int
 
 ## Part - C
 - 3.12 Database Phonebook (Creando la base de datos en MongoDB Atlas y vincular con mongoose, uso de Select e Insert)
-- 3.13 Database Phonebook (Trayendo toda la informacion de la base de datos a la API)
-- 3.14 Database Phonebook (Modificando el POST de la API para poder enviar los datos correctos a la BD y actualizar componentes)
+- 3.13 Database Phonebook (paso 1: Trayendo toda la informacion de la base de datos a la API)
+- 3.14 Database Phonebook (paso 2: Modificando el POST de la API para poder enviar los datos correctos a la BD y actualizar componentes)
+- 3.15 Database Phonebook (paso 3: Actualizando el backend para eliminar datos de la BD por la ruta .Delete)
+- 3.16 Database Phonebook (paso 4: Manejo de errores mediante un nuevo Middleware )
+- 3.17 Database Phonebook (paso 5: Generando la ruta .Put para poder actualizar los datos desde el Frontend)
+- 3.18 Database Phonebook (paso 6: Actualizando los manejadores /Info y .Get/persons/id para extraer los datos con precisión)
+
+## Part - D
+- 3.19 Database Phonebook (paso 7: Aplicando validaciones de Mongoose para los datos captados en el Frontend)
+- 3.20 Database Phonebook (paso 8: Creando una validacion personalizada de Mongoose para agregar los numeros de las personas)
+- 3.21 Deploy Phonebook (Desplegando el backend con BD de Phonebook a produccion, actualizacion de carpeta Dist con la nueva Build)
+- 3.22 Eslint Phonebook (Agregando ESlint al proyecto para agregar las reglas que me permitan solucionar todos los errores y advertencias)
+- link of PhonebookAPP [Phonebook](https://phonebook-mpsk.onrender.com/)

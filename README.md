@@ -7,5 +7,5 @@ Este repositorio está dedicado a almacenar todas las prácticas realizadas dura
 - Parte 1, Practicando con React, variables de estado, controles de eventos y desestructuración. 
 - Parte 2, Practicando con el llamado de APIs externas y mostrando datos directo desde el servidor con <Axio>, <useEffect>, APIs externas, etc.
 - Parte 3, Practicando en backend creando una APIRest con Express, creando las rutas, creando Middlewares, manejo de errores, Aplicacion de Cors,ESlint entre otras.
-
+- Parte 4, Creando test para el backend con Node:Test y aprendiendo a integrar la administracion de usuarios junto a la autentificacion basadas en Tokens.
 

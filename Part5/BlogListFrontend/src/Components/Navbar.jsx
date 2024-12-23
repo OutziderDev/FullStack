@@ -9,14 +9,14 @@ const Navbar = () => {
     }
 
     return(
-      <nav className="bg-slate-100 dark:bg-gray-800 shadow-md w-full z-50 top-0 transition-colors duration-300 mb-2">
+      <nav className="bg-slate-100 dark:bg-gray-800 shadow-md w-full animate-fadeIn transition-all duration-300 z-50 top-0 mb-2">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             
             <div className="flex-shrink-0">
               <a     href="#"  className="text-blue-600 dark:text-sky-400 text-2xl font-bold"              >
-                BLOG List
+                FullStack Open
               </a>
             </div>
 
@@ -35,21 +35,15 @@ const Navbar = () => {
                 </a>
                 <a
                     href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"  >
-                    Watch
+                    People
                 </a>
                 <a
                     href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"  >
-                    Marketplace
+                    Blogs
                 </a>
                 <a
                     href="#" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"  >
-                    Groups
-                </a>
-                <a
-                    href="#"
-                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
-                >
-                    Gaming
+                    Git
                 </a>
               
                 <div className="text-right">

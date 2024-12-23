@@ -1,8 +1,7 @@
-# React + Vite
+# Full Stack Open - Helsinki - BACKEND
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Repositorio donde se encuentran desarrollados los modulos de la parte 5 del modulo de FullStack Open en donde crearemos todo el Frontend del proyecto Blog List, el cual tambien se conectara con la respectiva API desarrollada en el modulo 3 y 4
 
-Currently, two official plugins are available:
+## Part 5 - A 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 5.1 Frontend Blog List (paso 1: Creando un formulario de inicio de sesion en conjunto con el LoginService para obtener un API Token)

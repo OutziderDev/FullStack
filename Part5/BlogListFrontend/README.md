@@ -5,3 +5,4 @@ Repositorio donde se encuentran desarrollados los modulos de la parte 5 del modu
 ## Part 5 - A 
 
 - 5.1 Frontend Blog List (paso 1: Creando un formulario de inicio de sesion en conjunto con el LoginService para obtener un API Token)
+- 5.2 Frontend Blog List (paso 2: Guardando los datos de usuarios en LocalStorage para mantener la sesion y borrandola con una funcion)

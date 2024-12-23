@@ -9,7 +9,7 @@ const Navbar = () => {
     }
 
     return(
-      <nav className="bg-slate-100 dark:bg-gray-800 shadow-md w-full animate-fadeIn transition-all duration-300 z-50 top-0 mb-2">
+      <nav id="navbar" className="bg-slate-100 dark:bg-gray-800 shadow-md w-full animate-fadeIn transition-all duration-300 z-50 top-0 mb-2">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -52,6 +52,7 @@ const Navbar = () => {
                         type="checkbox"
                         className="peer sr-only "
                         checked={darkMode}
+                        id="checkdarkmode"
                         onChange={handleToggle}
                     />
                     <div className="w-11 h-6 bg-sky-900 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-sky-400 rounded-full peer dark:bg-slate-300 peer-checked:bg-slate-300 transition-colors duration-300 ease-in-out"></div>

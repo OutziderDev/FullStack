@@ -15,7 +15,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [errorMessage, setErrorMessage] = useState(null)
   
-  useEffect(() => {
+  useEffect(() => {// Fetch blogs
     const fetchBlogs = async () => {
       const blogs = await blogService.getAll()
       setBlog(blogs)
@@ -23,15 +23,22 @@ function App() {
     fetchBlogs()
   },[])
   
+  useEffect(() => { // Check if user is logged
+    const loggedUserJSON = window.localStorage.getItem('loggedBlogUser')
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      setUser(user)
+    }
+  }, [])
+
   const handleLogin = async (e) => {
     e.preventDefault()
 
     try {
-      //console.log('Username:',username);
-      //console.log('Password:',password);
-      const userFromLohin = await loginService.login({username, password})
-      console.log('const user:',userFromLohin)
-      setUser(userFromLohin)
+      const userFromLogin = await loginService.login({username, password})
+      window.localStorage.setItem('loggedBlogUser', JSON.stringify(userFromLogin)) 
+      console.log('const user:',userFromLogin)
+      setUser(userFromLogin)
       setUsername('')
       setPassword('')
     } catch (error) {
@@ -44,6 +51,11 @@ function App() {
    
   } 
 
+  const handleLogout = () => {
+    window.localStorage.removeItem('loggedBlogUser')
+    setUser(null) 
+  }
+
   if (!blog) { return }
 
   return (
@@ -55,7 +67,7 @@ function App() {
         {!user ? (
           <Login handleLogin={handleLogin} setUsername={setUsername} setPassword={setPassword} />
           ) : (
-          <Main blogs={blog} user={user} />
+          <Main blogs={blog} user={user} handleLogout={handleLogout}  />
           )
         }
         <h3 className='text-white text-center mt-12 text-2xl'>Hola por acaaa</h3>

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Main = ({blogs,user}) => {
+const Main = ({blogs,user,handleLogout}) => {
 
     return(
         <div className={`grid grid-cols-1 md:grid-cols-[35%,65%] gap-2 animate-fadeIn transition-all duration-500`} >
@@ -11,19 +11,21 @@ const Main = ({blogs,user}) => {
                 <h2 className='text-center text-lg border-b-2 uppercase font-bold'> User Data</h2>
                 <span className='font-bold'>Name: {user.name}</span>
                 <p>blogs: 0</p>
-                <button className='p-2 border border-red-600 rounded-md dark:text-white hover:bg-red-600 hover:text-white'>Logout</button>
+                <button className='p-2 border border-red-600 rounded-md dark:text-white hover:bg-red-600 hover:text-white'
+                        onClick={handleLogout}
+                >Logout</button>
               </div>
 
               <div className='my-6 border border-gray-300 rounded-md p-4'>
-                <form action="" className='flex flex-col'>
+                <form id='formAddBlog' action="" className='flex flex-col'>
                   <label htmlFor="title">Title:</label>
-                  <input type="text" name='title' />
+                  <input type="text" id='title' name='title' />
 
-                  <label htmlFor="url">Url:</label>
-                  <input type="text" name='url' />
+                  <label id='labelurl' htmlFor="url">Url:</label>
+                  <input type="text" id='url' name='url' />
 
-                  <label htmlFor="likes">Likes:</label>
-                  <input type="text" name='likes' />
+                  <label id='labellikes' htmlFor="likes">Likes:</label>
+                  <input type="text" id='likes' name='likes' />
 
                   <button className='mt-3 rounded-md p-2 border border-green-500 hover:text-white hover:bg-green-500'>Save</button>
                 </form>
@@ -47,8 +49,8 @@ const Main = ({blogs,user}) => {
 
 Main.propTypes = {
     blogs: PropTypes.array.isRequired,
-    user: PropTypes.object.isRequired 
-    
+    user: PropTypes.object.isRequired,
+    handleLogout: PropTypes.func.isRequired
 }; 
 
 

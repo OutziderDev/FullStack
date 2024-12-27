@@ -66,7 +66,7 @@ function App() {
         {!user ? (
           <Login handleLogin={handleLogin} setUsername={setUsername} setPassword={setPassword} />
           ) : (
-          <Main blogs={blog} user={user} handleLogout={handleLogout} setErrorMessage={setErrorMessage}  />
+          <Main blogs={blog} setBlogs={setBlog} user={user} handleLogout={handleLogout} setErrorMessage={setErrorMessage}  />
           )
         }
         <h3 className='text-white text-center mt-12 text-2xl'>Hola por acaaa</h3>

@@ -2,10 +2,10 @@ import { useState } from "react";
 import blogService from "../../Services/blogService";
 import PropTypes from 'prop-types';
 
-const FormAddBlog = ({setErrorMessage}) => {
+const FormAddBlog = ({setErrorMessage,setBlogs,blogs}) => {
   const [title, setTitle] = useState('')
   const [url, setUrl] = useState('')
-  const [likes, setLikes] = useState('')
+  const [author, setAuthor] = useState('')
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleAccordion = () => {
@@ -17,15 +17,16 @@ const FormAddBlog = ({setErrorMessage}) => {
     try {
       const newBlog = {
         title,
-        url,
-        likes
+        author,
+        url
       }
       const blog = await blogService.create(newBlog)
-      console.log(blog);
-      
+      //console.log(blog);
       setTitle('')
       setUrl('')
-      setLikes('')
+      setAuthor('')
+      setBlogs(blogs.concat(blog))
+      
     } catch (error) {
       //console.log(error);
       setErrorMessage(error.response.data.error)
@@ -41,7 +42,7 @@ const FormAddBlog = ({setErrorMessage}) => {
         <button
           type="button"
           onClick={toggleAccordion}
-          className="flex z-10 dark:z-50 items-center justify-between w-full p-5 font-medium text-gray-500 border rounded-xl focus:ring-2 focus:ring-green-200 dark:focus:ring-green-500 border-green-500 dark:text-gray-100 hover:bg-green-100 dark:hover:bg-green-700 gap-3"
+          className="flex relative z-10 overflow-hidden dark:z-50 items-center justify-between w-full p-5 font-medium text-gray-500 border rounded-xl focus:ring-2 focus:ring-green-200 dark:focus:ring-green-500 border-green-500 dark:text-gray-100 hover:bg-green-100 dark:hover:bg-green-700 gap-3"
           aria-expanded={isOpen}
           aria-controls="accordion-body"
         >
@@ -70,13 +71,13 @@ const FormAddBlog = ({setErrorMessage}) => {
         <div className="mb-2 text-gray-500 dark:text-gray-100">
           <form id='formAddBlog' onSubmit={handleAddBlog} action="" className='flex flex-col space-y-2'>
             <label htmlFor="title">Title:</label>
-            <input onChange={(e)=>setTitle(e.target.value)} value={title} type="text" className="dark:text-gray-900 rounded-md p-1 border border-green-500 active:right-2" id='title' name='title' placeholder="pepito"/>
+            <input onChange={(e)=>setTitle(e.target.value)} value={title} type="text" className="dark:text-gray-900 rounded-md p-1 border border-green-500 active:right-2" id='title' name='title' placeholder="El rey Griego"/>
+
+            <label id='labellikes' htmlFor="likes">Author:</label>
+            <input onChange={(e)=> setAuthor(e.target.value)} value={author} type="text" className="dark:text-gray-900 rounded-md p-1 border border-green-500 active:right-2" id='likes' name='likes' placeholder="Alejandro Magno"/>
 
             <label id='labelurl' htmlFor="url">Url:</label>
-            <input onChange={(e)=> setUrl(e.target.value)} value={url} type="text" className="dark:text-gray-900 rounded-md p-1 border border-green-500 active:right-2" id='url' name='url' placeholder="www.pepito.com"/>
-
-            <label id='labellikes' htmlFor="likes">Likes:</label>
-            <input onChange={(e)=> setLikes(e.target.value)} value={likes} type="text" className="dark:text-gray-900 rounded-md p-1 border border-green-500 active:right-2" id='likes' name='likes' placeholder="15"/>
+            <input onChange={(e)=> setUrl(e.target.value)} value={url} type="text" className="dark:text-gray-900 rounded-md p-1 border border-green-500 active:right-2" id='url' name='url' placeholder="www.historia.com"/>
 
             <button className='mt-3 rounded-md p-2 border border-green-500 hover:text-white hover:bg-green-500'>Save</button>
           </form>
@@ -88,6 +89,8 @@ const FormAddBlog = ({setErrorMessage}) => {
 }
 
 FormAddBlog.propTypes = {
+  setBlogs: PropTypes.func,
+  blogs:PropTypes.array,
   setErrorMessage: PropTypes.func
 } 
 

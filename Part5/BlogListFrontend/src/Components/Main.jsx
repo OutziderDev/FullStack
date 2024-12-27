@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import FormAddBlog from './Subcomponents/FormAddBlog';
 import UserInfo from './Subcomponents/userInfo';
 
-const Main = ({blogs,user,handleLogout,setErrorMessage}) => {
+const Main = ({blogs,user,handleLogout,setErrorMessage,setBlogs}) => {
 
     return(
         <div className={`grid grid-cols-1 md:grid-cols-[35%,65%] gap-2 animate-fadeIn transition-all duration-500`} >
@@ -10,7 +10,7 @@ const Main = ({blogs,user,handleLogout,setErrorMessage}) => {
             <aside className='dark:text-white px-2 pt-2 '>
               <UserInfo user={user} handleLogout={handleLogout}/>
               
-              <FormAddBlog setErrorMessage={setErrorMessage}/>  
+              <FormAddBlog setErrorMessage={setErrorMessage} blogs={blogs} setBlogs={setBlogs}/>  
             </aside>
             
             <section className='px-2' id='forBlogs'>
@@ -32,6 +32,7 @@ Main.propTypes = {
     blogs: PropTypes.array.isRequired,
     user: PropTypes.object.isRequired,
     handleLogout: PropTypes.func.isRequired,
+    setBlogs:PropTypes.func,
     setErrorMessage:  PropTypes.func
 }; 
 

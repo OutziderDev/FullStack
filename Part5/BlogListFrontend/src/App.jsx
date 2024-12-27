@@ -13,7 +13,7 @@ function App() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
-  const [errorMessage, setErrorMessage] = useState(null)
+  const [notification, setNotification] = useState({message: null,type:null})
   
   useEffect(() => {// Fetch blogs
     const fetchBlogs = async () => {
@@ -42,9 +42,9 @@ function App() {
       setUsername('')
       setPassword('')
     } catch (error) {
-      setErrorMessage(error.response.data.error)
+      setNotification({message:error.response.data.error, type:'warning'})
       setTimeout(() => {
-        setErrorMessage(null)
+        setNotification({ message: null, type: null })
       }, 3000)
     }
    
@@ -62,11 +62,11 @@ function App() {
       <Navbar/>
       <main className='container mx-auto mt-3'>
         <Header/>
-        <Notification message={errorMessage}/>
+        <Notification message={notification.message} type={notification.type}/>
         {!user ? (
           <Login handleLogin={handleLogin} setUsername={setUsername} setPassword={setPassword} />
           ) : (
-          <Main blogs={blog} setBlogs={setBlog} user={user} handleLogout={handleLogout} setErrorMessage={setErrorMessage}  />
+          <Main blogs={blog} setBlogs={setBlog} user={user} handleLogout={handleLogout} setNotification={setNotification}  />
           )
         }
         <h3 className='text-white text-center mt-12 text-2xl'>Hola por acaaa</h3>

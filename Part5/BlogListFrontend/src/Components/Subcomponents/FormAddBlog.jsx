@@ -2,7 +2,7 @@ import { useState } from "react";
 import blogService from "../../Services/blogService";
 import PropTypes from 'prop-types';
 
-const FormAddBlog = ({setErrorMessage,setBlogs,blogs}) => {
+const FormAddBlog = ({setNotification,setBlogs,blogs}) => {
   const [title, setTitle] = useState('')
   const [url, setUrl] = useState('')
   const [author, setAuthor] = useState('')
@@ -26,12 +26,17 @@ const FormAddBlog = ({setErrorMessage,setBlogs,blogs}) => {
       setUrl('')
       setAuthor('')
       setBlogs(blogs.concat(blog))
-      
-    } catch (error) {
-      //console.log(error);
-      setErrorMessage(error.response.data.error)
+      setNotification({ message:"the new blog add succesfully", type:'success' })
+      //setNotification({ message: null, type: null })
       setTimeout(() => {
-        setErrorMessage(null)
+        setNotification({ message: null, type: null })
+      }, 3000);
+    } catch (error) {
+      console.log(error);
+      const msgError= error.response.data.error
+      setNotification({ message: msgError, type: 'warning' })
+      setTimeout(() => {
+        setNotification({ message: null, type: null })
       }, 3000);
     }
   }
@@ -65,7 +70,7 @@ const FormAddBlog = ({setErrorMessage,setBlogs,blogs}) => {
       </h2>
       <div
         id="accordion-body"
-        className={`p-5 -mt-2  border border-t-0 border-green-500 dark:bg-sky-950 ${isOpen ? "block" : "hidden"}`}
+        className={`p-5 -mt-2 ${isOpen ? "animate-fadeIn":"animate-fadeOut"} border border-t-0 border-green-500 dark:bg-sky-950 ${isOpen ? "block" : "hidden"}`}
         aria-labelledby="accordion-heading"
       >
         <div className="mb-2 text-gray-500 dark:text-gray-100">
@@ -91,7 +96,7 @@ const FormAddBlog = ({setErrorMessage,setBlogs,blogs}) => {
 FormAddBlog.propTypes = {
   setBlogs: PropTypes.func,
   blogs:PropTypes.array,
-  setErrorMessage: PropTypes.func
+  setNotification: PropTypes.func
 } 
 
 export default FormAddBlog;

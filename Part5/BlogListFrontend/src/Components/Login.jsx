@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const Login = ({handleLogin,setUsername,setPassword}) => {
     return(
         <>
-            <form onSubmit={handleLogin} id='formLogin' className="bg-blue-100 dark:bg-transparent mt-20 p-5 flex flex-col max-w-xl mx-auto border-2 border-blue-300 rounded-lg shadow-md shadow-blue-300 dark:shadow-white" action="" >
+            <form onSubmit={handleLogin} id='formLogin' className="bg-blue-100 animate-fadeIn dark:bg-transparent mt-20 p-5 flex flex-col max-w-xl mx-auto border-2 border-blue-300 rounded-lg shadow-md shadow-blue-300 dark:shadow-white" action="" >
                 <label className='text-blue-600 font-bold dark:text-white ' htmlFor="username">Username:</label>
                 <input className='my-3 rounded p-1 pl-2 outline outline-2  outline-sky-200 focus:outline-4  focus:outline-sky-500' 
                         type="text"

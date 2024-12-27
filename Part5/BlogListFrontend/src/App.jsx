@@ -37,13 +37,12 @@ function App() {
     try {
       const userFromLogin = await loginService.login({username, password})
       window.localStorage.setItem('loggedBlogUser', JSON.stringify(userFromLogin)) 
-      console.log('const user:',userFromLogin)
+      //console.log('const user:',userFromLogin)
       setUser(userFromLogin)
       setUsername('')
       setPassword('')
     } catch (error) {
-      //console.log(error.response.data.erro);
-      setErrorMessage(error.response.data.erro)
+      setErrorMessage(error.response.data.error)
       setTimeout(() => {
         setErrorMessage(null)
       }, 3000)
@@ -67,7 +66,7 @@ function App() {
         {!user ? (
           <Login handleLogin={handleLogin} setUsername={setUsername} setPassword={setPassword} />
           ) : (
-          <Main blogs={blog} user={user} handleLogout={handleLogout}  />
+          <Main blogs={blog} user={user} handleLogout={handleLogout} setErrorMessage={setErrorMessage}  />
           )
         }
         <h3 className='text-white text-center mt-12 text-2xl'>Hola por acaaa</h3>

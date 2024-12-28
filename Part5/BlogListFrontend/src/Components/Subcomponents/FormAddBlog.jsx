@@ -21,13 +21,11 @@ const FormAddBlog = ({setNotification,setBlogs,blogs}) => {
         url
       }
       const blog = await blogService.create(newBlog)
-      //console.log(blog);
       setTitle('')
       setUrl('')
       setAuthor('')
       setBlogs(blogs.concat(blog))
       setNotification({ message:"the new blog add succesfully", type:'success' })
-      //setNotification({ message: null, type: null })
       setTimeout(() => {
         setNotification({ message: null, type: null })
       }, 3000);
@@ -70,7 +68,7 @@ const FormAddBlog = ({setNotification,setBlogs,blogs}) => {
       </h2>
       <div
         id="accordion-body"
-        className={`p-5 -mt-2 ${isOpen ? "animate-fadeIn":"animate-fadeOut"} border border-t-0 border-green-500 dark:bg-sky-950 ${isOpen ? "block" : "hidden"}`}
+        className={`p-5 -mt-2 ${isOpen ? "animate-fadeIn":""} border border-t-0 border-green-500 dark:bg-sky-950 ${isOpen ? "block" : "hidden"}`}
         aria-labelledby="accordion-heading"
       >
         <div className="mb-2 text-gray-500 dark:text-gray-100">

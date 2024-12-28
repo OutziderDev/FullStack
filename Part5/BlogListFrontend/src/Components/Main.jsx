@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import FormAddBlog from './Subcomponents/FormAddBlog';
 import UserInfo from './Subcomponents/userInfo';
+import BlogCard from './Subcomponents/blogCard';
 
 const Main = ({blogs,user,handleLogout,setNotification,setBlogs}) => {
 
@@ -14,14 +15,7 @@ const Main = ({blogs,user,handleLogout,setNotification,setBlogs}) => {
             </aside>
             
             <section className='px-2' id='forBlogs'>
-              {
-                blogs.map(blog => (
-                  <article key={blog.id} className='border border-gray-300 dark:text-white dark:border-sky-400 p-4 shadow-botton dark:shadow-sky-400 rounded-sm my-2'>
-                    <h2 className='text-2xl font-bold'>{blog.title}</h2>
-                    <p>{blog.body}</p>
-                  </article>
-                ))
-              }
+              <BlogCard blogs={blogs}/>
             </section>
 
           </div>

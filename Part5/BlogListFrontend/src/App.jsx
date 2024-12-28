@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Notification from './Components/Subcomponents/Notification'
 import Navbar from './Components/Navbar'
 import Header from './Components/Header'
+import Footer from './Components/Footer'
 import Login from './Components/Login'
 import Main from './Components/Main'
 
@@ -37,7 +38,6 @@ function App() {
     try {
       const userFromLogin = await loginService.login({username, password})
       window.localStorage.setItem('loggedBlogUser', JSON.stringify(userFromLogin)) 
-      //console.log('const user:',userFromLogin)
       setUser(userFromLogin)
       setUsername('')
       setPassword('')
@@ -55,7 +55,7 @@ function App() {
     setUser(null) 
   }
 
-  if (!blog) { return }
+  if (!blog)  return 
 
   return (
     <>
@@ -69,7 +69,7 @@ function App() {
           <Main blogs={blog} setBlogs={setBlog} user={user} handleLogout={handleLogout} setNotification={setNotification}  />
           )
         }
-        <h3 className='text-white text-center mt-12 text-2xl'>Hola por acaaa</h3>
+        <Footer/>
       </main>
     </>
   )

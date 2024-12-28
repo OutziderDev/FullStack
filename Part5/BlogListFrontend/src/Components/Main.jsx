@@ -15,7 +15,7 @@ const Main = ({blogs,user,handleLogout,setNotification,setBlogs}) => {
             </aside>
             
             <section className='px-2' id='forBlogs'>
-              <BlogCard blogs={blogs}/>
+              <BlogCard blogs={blogs} setBlog={setBlogs}/>
             </section>
 
           </div>

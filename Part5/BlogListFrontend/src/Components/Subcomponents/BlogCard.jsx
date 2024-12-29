@@ -8,14 +8,13 @@ const BlogCard = ({blogs ,setBlog}) => {
         setCardVisible(cardVisible === id ? null : id)
     }
 
-    const handleLikeBlog = async (selectedBlog) => {    
+    const handleLikeBlog = async (selectedBlog) => {     
         const updateLikesBlog = {...selectedBlog, likes: selectedBlog.likes + 1 }
         const response = await blogService.update(selectedBlog.id,updateLikesBlog)
         setBlog( (prevBlogs => prevBlogs.map(
             blog => blog.id === response.id ? response : blog)
             )
         )
-        setCardVisible(null)   
     }
 
     return (  
@@ -40,7 +39,7 @@ const BlogCard = ({blogs ,setBlog}) => {
                 </div>
 
                 <div className={`animate-fadeIn ${cardVisible === blog.id ? "block" : "hidden"} border-t p-1 mt-1`}>
-                    <p> Visita el blog en: <a href="#" className="hover:text-green-400 ml-2">{blog.url}</a>  </p>
+                    <p> Visita el blog en: <a href="#" className="hover:text-green-400 ml-2">{blog.url}</a> </p>
                     <p className="flex justify-between">
                         <span>Likes: <strong>{blog.likes}</strong></span>
                          <button onClick={()=>handleLikeBlog(blog)}>

@@ -14,3 +14,4 @@ Repositorio donde se encuentran desarrollados los modulos de la parte 5 del modu
 - 5.6 Frontend Blog list (paso 6: Separando todo los formularion a sus respectivos componentes y sus estados garantizando la funcionalidad)
 - 5.7 Frontend Blog List (paso 7: Agregar boton de hide/show a cada blog para ver su informacion correspondiente)
 - 5.8 Frontend Blog List (paso 8: Implementando la funcionalidad del boton like de cada blog para aumentar sus likes)
+- 5.9 Frontend Blog List (paso 9: Modificando el backend para formatear los datos y solucionar el fallo de los nombres en la ruta put)

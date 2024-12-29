@@ -16,8 +16,10 @@ const BlogCard = ({blogs ,setBlog}) => {
             )
         )
     }
-
-    return (  
+    //order
+    blogs.sort((primary,secundary)=> secundary.likes - primary.likes)
+    
+    return (        
         blogs.map(blog => (
             <article key={blog.id} className='dark:bg-gradient-to-tr from-sky-600 to-blue-900 border border-gray-300 dark:text-white dark:border-sky-400 p-4 rounded-md my-2  transition-all'>
                 <div className="flex justify-between">

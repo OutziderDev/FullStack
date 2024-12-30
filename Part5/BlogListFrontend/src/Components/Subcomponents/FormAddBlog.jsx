@@ -93,6 +93,7 @@ const FormAddBlog = ({setNotification,setBlogs,blogs}) => {
 
 FormAddBlog.propTypes = {
   setBlogs: PropTypes.func,
+  
   blogs:PropTypes.array,
   setNotification: PropTypes.func
 } 

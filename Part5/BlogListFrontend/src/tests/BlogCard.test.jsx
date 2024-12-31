@@ -1,5 +1,6 @@
-import {render, screen} from '@testing-library/react'
 import Blog from '../Components/Subcomponents/BlogCard'
+import {render, screen} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 const mockBlogs = [
   {
@@ -20,18 +21,35 @@ beforeEach(() => {
   window.localStorage.setItem('loggedBlogUser', JSON.stringify(userData));
 });
 
-afterEach(() => {
-  window.localStorage.clear();
-});
-
 test('renders blog title and author, but not URL or likes by default', () => {
   render(<Blog blogs={mockBlogs} setBlog={() => {}} />);
   //screen.debug()
-  // Verificar que el título y el autor se muestren
   expect(screen.getByText('Test Blog Title')).toBeInTheDocument();
   expect(screen.getByText(/Publishing by:/i)).toBeInTheDocument();
   expect(screen.getByText('Test Author')).toBeInTheDocument();
-  // Verificar que la URL y los likes NO se muestren inicialmente
+  //not show
   expect(screen.queryByText('Visita el blog en: https://example.com')).not.toBeInTheDocument();
   expect(screen.queryByText('Likes: 5')).not.toBeInTheDocument();
+});
+
+test('show url and likes when click button', async () => { 
+  const mockHandler = vi.fn()
+  
+  render(<Blog blogs={mockBlogs} setBlog={mockHandler}/>)
+  
+  const user = userEvent.setup()
+  const button = screen.getByTestId('btnview')
+  const hiddenContent = screen.queryByText(/Visita el blog en: https:\/\/\example.com/)
+
+  expect(hiddenContent).toBeNull()
+  expect(screen.queryByText('Likes: 5')).not.toBeInTheDocument();
+
+  await user.click(button)
+  
+  expect(screen.getByText(/Visita el blog en:/)).toBeInTheDocument()
+  expect(screen.queryByText(/Likes:/i)).toBeInTheDocument();
+ })
+
+ afterEach(() => {
+  window.localStorage.clear();
 });

@@ -46,7 +46,7 @@ const BlogCard = ({blogs ,setBlog}) => {
                             </button>
                             ) : ''
                         }
-                        <button onClick={() => handleCardVisibility(blog.id)} className="flex items-center justify-center rounded-lg hover:bg-slate-100/10 w-8">
+                        <button aria-label="btnview" data-testid="btnview" onClick={() => handleCardVisibility(blog.id)} className="flex items-center justify-center rounded-lg hover:bg-slate-100/10 w-8">
                             {
                             cardVisible !== blog.id ? (
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  className="size-6 stroke-black dark:stroke-white fill-none stroke-2">

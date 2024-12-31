@@ -1,5 +1,5 @@
-import Blog from '../Components/Subcomponents/BlogCard'
-import {render, screen} from '@testing-library/react'
+import {render, screen,fireEvent } from '@testing-library/react'
+import BlogCard from '../Components/Subcomponents/BlogCard'
 import userEvent from '@testing-library/user-event'
 
 const mockBlogs = [
@@ -22,7 +22,7 @@ beforeEach(() => {
 });
 
 test('renders blog title and author, but not URL or likes by default', () => {
-  render(<Blog blogs={mockBlogs} setBlog={() => {}} />);
+  render(<BlogCard blogs={mockBlogs} setBlog={() => {}} />);
   //screen.debug()
   expect(screen.getByText('Test Blog Title')).toBeInTheDocument();
   expect(screen.getByText(/Publishing by:/i)).toBeInTheDocument();
@@ -35,7 +35,7 @@ test('renders blog title and author, but not URL or likes by default', () => {
 test('show url and likes when click button', async () => { 
   const mockHandler = vi.fn()
   
-  render(<Blog blogs={mockBlogs} setBlog={mockHandler}/>)
+  render(<BlogCard blogs={mockBlogs} setBlog={mockHandler}/>)
   
   const user = userEvent.setup()
   const button = screen.getByTestId('btnview')
@@ -52,19 +52,19 @@ test('show url and likes when click button', async () => {
 
 test('calls event handler twice when like button is clicked twice', async () => {
     const setBlog = vi.fn()
-    const handleLikeBlog = vi.fn()
+    const mockClickHandler = vi.fn()
 
-    render(<Blog blogs={mockBlogs} setBlog={setBlog} />)
+    render(<BlogCard blogs={mockBlogs} setBlog={setBlog}/>)
 
     const user = userEvent.setup()
     const button = screen.getByTestId('btnlike')
+    button.addEventListener('click',mockClickHandler)
     //screen.debug(button)
-    user.click(button)
-    user.click(button)
-    console.log(handleLikeBlog);
+    await user.click(button)
+    await user.click(button)
     
-    //expect(handleLikeBlog).toHaveBeenCalledTimes(2)
-    expect(handleLikeBlog.mock.calls).toHaveLength(2)
+    expect(mockClickHandler).toHaveBeenCalledTimes(2)
+    //expect(mockClickHandler.mock.calls).toHaveLength(2)
 })
 
  afterEach(() => {

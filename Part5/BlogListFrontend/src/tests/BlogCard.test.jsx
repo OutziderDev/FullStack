@@ -50,6 +50,23 @@ test('show url and likes when click button', async () => {
   expect(screen.queryByText(/Likes:/i)).toBeInTheDocument();
  })
 
+test('calls event handler twice when like button is clicked twice', async () => {
+    const setBlog = vi.fn()
+    const handleLikeBlog = vi.fn()
+
+    render(<Blog blogs={mockBlogs} setBlog={setBlog} />)
+
+    const user = userEvent.setup()
+    const button = screen.getByTestId('btnlike')
+    //screen.debug(button)
+    user.click(button)
+    user.click(button)
+    console.log(handleLikeBlog);
+    
+    //expect(handleLikeBlog).toHaveBeenCalledTimes(2)
+    expect(handleLikeBlog.mock.calls).toHaveLength(2)
+})
+
  afterEach(() => {
   window.localStorage.clear();
 });

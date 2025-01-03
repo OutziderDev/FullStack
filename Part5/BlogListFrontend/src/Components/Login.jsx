@@ -7,6 +7,7 @@ const Login = ({handleLogin,setUsername,setPassword}) => {
                 <label className='text-blue-600 font-bold dark:text-white ' htmlFor="username">Username:</label>
                 <input className='my-3 rounded p-1 pl-2 outline outline-2  outline-sky-200 focus:outline-4  focus:outline-sky-500' 
                         type="text"
+                        data-testid="inputUser"
                         id='username'
                         name='username'
                         autoComplete='on'
@@ -16,6 +17,7 @@ const Login = ({handleLogin,setUsername,setPassword}) => {
 
                 <label className='text-blue-600 font-bold dark:text-white' htmlFor="password">Password:</label>
                 <input className='my-3 rounded p-1 pl-2 outline outline-2  outline-sky-200 focus:outline-4  focus:outline-sky-500'
+                    data-testid="inputPass"
                     type="password"
                     id="password"
                     name="password"

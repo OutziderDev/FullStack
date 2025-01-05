@@ -17,3 +17,10 @@ Repositorio donde se encuentran desarrollados los modulos de la parte 5 del modu
 - 5.9 Frontend Blog List (paso 9: Modificando el backend para formatear los datos y solucionar el fallo en la ruta put)
 - 5.10 Frontend Blog List (paso 10: Cambiando el orden de los blogs con Sort() para verlos en orden de cantidad de likes)
 - 5.11 Frontend Blog List (paso 11: Añadiendo un nuevo boton para eliminar los blogs perteneciente unicamente al usuario log)
+- 5.12 Frontend Blog List (paso 12: Añadiendo los ProTypes a un componente y configurando Eslint en el proyecto)
+
+## Part 5 - C
+- 5.13 Test Blog List (paso 1: Creando pruebas que verifique que el componente que muestra un blog muestre el título y el autor del blog, pero no muestre su URL o likes)
+- 5.14 Test Blog List (paso 2: Prueba que verifique que la URL y el número de likes se muestran cuando se hace clic en el botón que controla los detalles mostrados.)
+- 5.15 Test Blog List (paso 3: Prueba que garantice que 2 clicks en el botón like, se llama dos veces al controlador de eventos que el componente recibió como props.)
+- 5.16 Test Blog List (paso 4: Prueba para verificar que la funcion de un formulario llama a su controlador de eventos)

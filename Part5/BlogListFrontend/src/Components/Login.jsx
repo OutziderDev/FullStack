@@ -25,7 +25,7 @@ const Login = ({handleLogin,setUsername,setPassword}) => {
                     onChange={(e) => setPassword(e.target.value)}
                 />
 
-                <button className="mt-6 block text-sky-400 border border-sky-400 rounded-md px-4 py-1 hover:bg-sky-400 hover:text-white font-bold"> Login</button>
+                <button data-testid='btnLogin' className="mt-6 block text-sky-400 border border-sky-400 rounded-md px-4 py-1 hover:bg-sky-400 hover:text-white font-bold"> Login</button>
             </form>
         </>
     )

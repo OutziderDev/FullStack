@@ -41,7 +41,7 @@ const FormAddBlog = ({setNotification,setBlogs,blogs}) => {
 
   return (
     <div className="mx-auto my-6">
-      <h2 id="accordion-heading">
+      <h2 data-testid='btnAdd' id="accordion-heading">
         <button
           type="button"
           onClick={toggleAccordion}
@@ -73,16 +73,16 @@ const FormAddBlog = ({setNotification,setBlogs,blogs}) => {
       >
         <div className="mb-2 text-gray-500 dark:text-gray-100">
           <form id='formAddBlog' onSubmit={handleAddBlog} action="" className='flex flex-col space-y-2'>
-            <label htmlFor="title">Title:</label>
-            <input onChange={(e)=>setTitle(e.target.value)} value={title} type="text" className="dark:text-gray-900 rounded-md p-1 border border-green-500 active:right-2" id='title' name='title' placeholder="El rey Griego"/>
+            <label data-testid='labelTitle' htmlFor="title">Title:</label>
+            <input data-testid='inputFormTitle' onChange={(e)=>setTitle(e.target.value)} value={title} type="text" className="dark:text-gray-900 rounded-md p-1 border border-green-500 active:right-2" id='title' name='title' placeholder="El rey Griego"/>
 
             <label id='labellikes' htmlFor="likes">Author:</label>
-            <input onChange={(e)=> setAuthor(e.target.value)} value={author} type="text" className="dark:text-gray-900 rounded-md p-1 border border-green-500 active:right-2" id='likes' name='likes' placeholder="Alejandro Magno"/>
+            <input data-testid='inputFormAuthor' onChange={(e)=> setAuthor(e.target.value)} value={author} type="text" className="dark:text-gray-900 rounded-md p-1 border border-green-500 active:right-2" id='likes' name='likes' placeholder="Alejandro Magno"/>
 
             <label id='labelurl' htmlFor="url">Url:</label>
-            <input onChange={(e)=> setUrl(e.target.value)} value={url} type="text" className="dark:text-gray-900 rounded-md p-1 border border-green-500 active:right-2" id='url' name='url' placeholder="www.historia.com"/>
+            <input data-testid='inputFormUrl' onChange={(e)=> setUrl(e.target.value)} value={url} type="text" className="dark:text-gray-900 rounded-md p-1 border border-green-500 active:right-2" id='url' name='url' placeholder="www.historia.com"/>
 
-            <button className='mt-3 rounded-md p-2 border border-green-500 hover:text-white hover:bg-green-500'>Save</button>
+            <button data-testid='btnSave' className='mt-3 rounded-md p-2 border border-green-500 hover:text-white hover:bg-green-500'>Save</button>
           </form>
         </div>
        

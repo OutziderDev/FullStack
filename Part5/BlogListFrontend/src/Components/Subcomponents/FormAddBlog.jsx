@@ -30,7 +30,7 @@ const FormAddBlog = ({setNotification,setBlogs,blogs}) => {
         setNotification({ message: null, type: null })
       }, 3000);
     } catch (error) {
-      console.log(error);
+      console.log(error)
       const msgError= error.response.data.error
       setNotification({ message: msgError, type: 'warning' })
       setTimeout(() => {

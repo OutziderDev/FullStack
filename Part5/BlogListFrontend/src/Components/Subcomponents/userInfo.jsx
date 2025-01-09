@@ -7,9 +7,9 @@ const UserInfo = ({ user,handleLogout }) => {
             <h2 data-testid='userInfo' className='text-center text-lg border-b-2 uppercase font-bold'> User Data</h2>
             <span className='font-bold'>Name: {user.name}</span>
             <p>blogs: 0</p>
-            <button className='p-2 bg-red-500 border border-red-600 rounded-md text-white hover:bg-red-600 hover:text-white'
-                     onClick={handleLogout}
-            >Logout</button>
+            <button data-testid='btnLogout' onClick={handleLogout} className='p-2 bg-red-500 border border-red-600 rounded-md text-white hover:bg-red-600 hover:text-white'>
+              Logout
+            </button>
         </div>
     )
 }

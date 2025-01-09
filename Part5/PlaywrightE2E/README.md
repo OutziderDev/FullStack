@@ -11,3 +11,5 @@ De igual manera, a continuacion se presenta una lista para las pruebas correspon
 - 5.19 Test E2E Blog List (paso 3: Realizando un testing para que los usuarios logeados puedan crear nuevos blogs)
 - 5.20 Test E2E Blog List (paso 4: Test para verificar que los blogs pueden editarse exitosamente)
 - 5.21 Test E2E Blog List (paso 5: Comprobando en un test que el escritor de un blog puede borrarlo y activar el window.confirm en playwright)
+- 5.22 Test E2E Blog List (paso 6: Test para comprobar creando otro usuario que solo el propietario de cada blog puede borrar un blog)
+- 5.23 Test E2E Blog List (paso 7: Verificando con un test que los blogs se ordenen por orden de likes con el metodo Sort())

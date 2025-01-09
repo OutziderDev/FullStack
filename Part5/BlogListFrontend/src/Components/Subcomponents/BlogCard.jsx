@@ -37,7 +37,7 @@ const BlogCard = ({blogs ,setBlog}) => {
         blogs.map(blog => (
             <article key={blog.id} className='dark:bg-gradient-to-tr from-sky-600 to-blue-900 border border-gray-300 dark:text-white dark:border-sky-400 p-4 rounded-md my-2  transition-all'>
                 <div className="flex justify-between">
-                    <h2 className='text-2xl font-bold'>{blog.title}</h2>
+                    <h2 data-testid="blogTitle" className='text-2xl font-bold'>{blog.title}</h2>
                     <div className="flex gap-2">
                         {
                             userData.name === blog.user.name ? (

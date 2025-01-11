@@ -20,7 +20,7 @@ const asObject = (anecdote) => {
 const initialState = anecdotesAtStart.map(asObject)
 
 const reducer = (state = initialState, action) => {
-  initialState.sort((a,b)=>{b.votes - a.votes})
+  //initialState.sort((a,b)=>{b.votes - a.votes})
   switch (action.type) {
     case 'VOTE':{
       const id = action.payload.id

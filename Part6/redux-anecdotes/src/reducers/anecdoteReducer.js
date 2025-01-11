@@ -51,7 +51,7 @@ export const createNote = (note) =>{
     payload: {
       content: note,
       id: getId(),
-      votes: 0
+      votes: 0,
     }
   }
 }

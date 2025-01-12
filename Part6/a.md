@@ -5,6 +5,9 @@ En esta modulo se abordo una gran practica el control de componentes con reac re
 Entre los ejercicios desarrollados estan los siguientes:
 
 ## Part 6 - A 
+
+- 6.1 Redux Unicafe (paso 1: Creando un reducer de redux inmutable, su test con jest y definiendo las acciones)
+- 6.2 Redux Unicafe (paso 2: Actualizando el frontend para que sea funcional con el reducer)
 - 6.3 Redux Anecdotes (paso 1: Implementando la accion para votar en la app mediante un reducer)
 - 6.4 Redux Anecdotes (paso 2: Creando la accion para la funcionalidad de agregar nuevas anecdotas a la app)
 - 6.5 Redux Anecdotes (paso 3: Ordenando las anecdotas manteniendo el estado inmutable)

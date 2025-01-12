@@ -1,8 +1,10 @@
-# React + Vite
+# Full Stack Open - Helsinki - BACKEND
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Repositorio donde se encuentran desarrollados los modulos de la parte 6 del modulo de FullStack Open.
+En esta modulo se abordo una gran practica el control de componentes con reac redux para poder acceder desde cualquier componente.
+Entre los ejercicios desarrollados estan los siguientes:
 
-Currently, two official plugins are available:
+## Part 6 - A 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 6.1 Redux Unicafe (paso 1: Creando un reducer de redux inmutable, su test con jest y definiendo las acciones)
+- 6.2 Redux Unicafe (paso 2: Actualizando el frontend para que sea funcional con el reducer)

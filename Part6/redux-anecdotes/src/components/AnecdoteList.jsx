@@ -2,12 +2,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import {voteOf} from '../reducers/anecdoteReducer'
 
 const AnecdoteList = () => {
-  const anecdotes = useSelector(state => state.note)
+  const dispatch = useDispatch()
+  const anecdotes = useSelector(state => state.anecdote)
   const filter = useSelector(state => state.filter)
   const filteredAnecdote = anecdotes.filter(anecdote => anecdote.content.toLowerCase().includes(filter.toLowerCase()))
 
-  filteredAnecdote.sort((a,b) => b.votes - a.votes)
-  const dispatch = useDispatch()
+  //filteredAnecdote.sort((a,b) => b.votes - a.votes)
 
   const vote = (id) => {
       dispatch(voteOf(id))

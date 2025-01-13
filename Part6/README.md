@@ -14,3 +14,7 @@ Entre los ejercicios desarrollados estan los siguientes:
 - 6.6 Redux Anecdotes (paso 4: Separando las funciones para ejecutar las acciones desde el reducer en el frontend)
 - 6.7 Redux Anecdotes (paso 5: Creando un nuevo componente que se encargue de de manera independiente de agregar anecnotas)
 - 6.8 Redux Anecdotes (paso 6: Mostrando las anecdotas desde su propio componente y dejando el componente APP solo para las importaciones)
+
+## Part 6 - B
+- 6.9 Reduc Anecdotes (paso 7: Creando un componente y un reducer para filtrar anecdotas, se combinan los reducers en main)
+- 6.10 Reduc Anecdotes (paso 8: Cambiando el reducer para implementar configureStore y createSlice de Redux Toolkit)

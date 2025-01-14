@@ -18,3 +18,9 @@ Entre los ejercicios desarrollados estan los siguientes:
 ## Part 6 - B
 - 6.9 Reduc Anecdotes (paso 7: Creando un componente y un reducer para filtrar anecdotas, se combinan los reducers en main)
 - 6.10 Reduc Anecdotes (paso 8: Cambiando el reducer para implementar configureStore y createSlice de Redux Toolkit)
+- 6.11 Reduc Anecdotes (paso 9: Transformando el anecdote reducer en un slice del toolkit y definir sus acciones)
+- 6.12 Reduc Anecdotes (paso 10: Creando un Slice para las notificaciones con sus respectivas acciones para imprimir mensajes)
+- 6.13 Reduc Anecdotes (paso 11: definiendo un thunk para mostrar las notificaciones de creacion y votos por 5s)
+
+## Part 6 - C
+- 6.14 Redux & Backend Anecdote (paso 1: Implementando un json-server para conectar la app a un backend y optener los datos)

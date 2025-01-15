@@ -25,3 +25,4 @@ Entre los ejercicios desarrollados estan los siguientes:
 ## Part 6 - C
 - 6.14 Redux & Backend Anecdote (paso 1: Implementando un json-server para conectar la app a un backend y optener los datos)
 - 6.15 Redux & Backend Anecdote (paso 2: Modificando la creacion de notas para poder agregarlas tambien al backend)
+-  6.16 Redux & Backend anecdotes (paso 3: utilizando un thunk para cargar las anecdotas en una funcion y no en el componente)

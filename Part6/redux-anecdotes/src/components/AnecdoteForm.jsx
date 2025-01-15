@@ -12,7 +12,7 @@ const AnecdoteForm = () => {
     const content = e.target.note.value
     e.target.note.value = ''
     const anecdote = await anecdoteService.createAnecdote(content)
-    console.log(anecdote)
+    //console.log(anecdote)
     dispatch(createNote(anecdote))
     dispatch(setNotificationWithTimeout(`you create anecdote: ${anecdote.content}`))
   }

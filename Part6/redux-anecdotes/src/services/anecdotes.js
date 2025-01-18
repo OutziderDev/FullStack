@@ -7,6 +7,8 @@ const getAll = async () => {
   return response.data
 }
 
+export const getAllAnecdotes = () => axios.get('http://localhost:3001/anecdotes').then(res => res.data)
+
 const createAnecdote = async (content) => {
   const objAnecdote = {
     content,

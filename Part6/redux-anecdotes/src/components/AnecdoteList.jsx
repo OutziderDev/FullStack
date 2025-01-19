@@ -1,11 +1,15 @@
-//import { useSelector, useDispatch } from 'react-redux'
-//import {voteOf} from '../reducers/anecdoteReducer'
 //import { setNotificationWithTimeout } from '../reducers/notificationReducer'
-import {useQuery} from '@tanstack/react-query'
-import { getAllAnecdotes } from '../services/anecdotes'
-//import axios from 'axios'
+import {useQuery,useMutation, useQueryClient} from '@tanstack/react-query'
+import { getAllAnecdotes,updateAnecdote } from '../services/anecdotes'
 
 const AnecdoteList = () => {
+  const queryClient = useQueryClient()
+
+  const newMutation = useMutation({
+    mutationFn:updateAnecdote,
+    onSuccess: queryClient.invalidateQueries({queryKey: ['anecdotes']}),
+  })
+
   const result = useQuery({
     queryKey: ['anecdotes'],
     queryFn: getAllAnecdotes,
@@ -15,20 +19,16 @@ const AnecdoteList = () => {
   if ( result.isLoading ) {
     return <div>anecdote service not available due to problems in server</div>
   }
-
+  
   const filteredAnecdote = result.data
   //const anecdotes = useSelector(state => state.anecdote)
   //const filter = ''
   //const filteredAnecdote = anecdotes.filter(anecdote => anecdote.content.toLowerCase().includes(filter.toLowerCase()))
 
+  const vote = (anecdote) => {
+      newMutation.mutate({...anecdote,votes: anecdote.votes + 1})
+  }
 
-
-  const vote = () => {
-      //dispatch(voteOf(obj))
-      //dispatch(setNotificationWithTimeout(`you vote for: ${content}`,1000))
-      console.log('vamos por aqui');
-      
-    }
   return (
     filteredAnecdote.map(anecdote => 
       <div key={anecdote.id}>

@@ -6,13 +6,15 @@ export const getAllAnecdotes = () => axios.get('http://localhost:3001/anecdotes'
 
 export const createAnecdote = (newAnecdote) => axios.post(baseUrl,newAnecdote).then(r => r.data) 
 
-/*const getAll = async () => {
+export const updateAnecdote = (updateAnecdote) => axios.put(`${baseUrl}/${updateAnecdote.id}`,updateAnecdote)
+
+const getAll = async () => {
   const response = await axios.get(baseUrl)
   return response.data
 }
 
 
-const createAnecdote = async (content) => {
+/*const createAnecdote = async (content) => {
   const objAnecdote = {
     content,
     id: (100000 * Math.random()).toFixed(0),
@@ -20,12 +22,12 @@ const createAnecdote = async (content) => {
   }
   const response = await axios.post(baseUrl,objAnecdote)
   return response.data
-}*/
+}
 
 const updateAnecdote = async (newAnecdote) => {
   const id = newAnecdote.id
   const response = await axios.put(`${baseUrl}/${id}`,newAnecdote)
   return response.data
-}
+}*/
 
-export default {  createAnecdote, updateAnecdote }
+export default {  getAll }

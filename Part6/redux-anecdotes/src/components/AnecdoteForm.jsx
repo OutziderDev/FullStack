@@ -13,8 +13,14 @@ const AnecdoteForm = () => {
   const addAnecdote = async (e) => {
     e.preventDefault()
     const content = e.target.note.value
-    newAnecdoteMutation.mutate({content})
-    e.target.note.value = ''
+    
+    if (content.length >= 5) {  
+      newAnecdoteMutation.mutate({content})
+      e.target.note.value = ''
+    }else{
+      alert("need more than 4 character")
+      e.target.note.value = ''
+    }
   }
   
   return (

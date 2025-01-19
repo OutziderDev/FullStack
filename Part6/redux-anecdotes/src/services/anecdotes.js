@@ -2,12 +2,15 @@ import axios from 'axios'
 
 const baseUrl = 'http://localhost:3001/anecdotes'
 
-const getAll = async () => {
+export const getAllAnecdotes = () => axios.get('http://localhost:3001/anecdotes').then(res => res.data)
+
+export const createAnecdote = (newAnecdote) => axios.post(baseUrl,newAnecdote).then(r => r.data) 
+
+/*const getAll = async () => {
   const response = await axios.get(baseUrl)
   return response.data
 }
 
-export const getAllAnecdotes = () => axios.get('http://localhost:3001/anecdotes').then(res => res.data)
 
 const createAnecdote = async (content) => {
   const objAnecdote = {
@@ -17,7 +20,7 @@ const createAnecdote = async (content) => {
   }
   const response = await axios.post(baseUrl,objAnecdote)
   return response.data
-}
+}*/
 
 const updateAnecdote = async (newAnecdote) => {
   const id = newAnecdote.id
@@ -25,4 +28,4 @@ const updateAnecdote = async (newAnecdote) => {
   return response.data
 }
 
-export default { getAll, createAnecdote, updateAnecdote }
+export default {  createAnecdote, updateAnecdote }

@@ -1,16 +1,20 @@
-import {useDispatch } from 'react-redux'
-import { createNote } from '../reducers/anecdoteReducer'
-import { setNotificationWithTimeout } from '../reducers/notificationReducer'
+//import { setNotificationWithTimeout } from '../reducers/notificationReducer'
+import { createAnecdote } from "../services/anecdotes"
+import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 const AnecdoteForm = () => {
-  const dispatch = useDispatch()
+  const queryClient = useQueryClient()
+  
+  const newAnecdoteMutation = useMutation({
+    mutationFn:createAnecdote,
+    onSuccess:queryClient.invalidateQueries({queryKey: ['anecdotes']})
+  })
 
   const addAnecdote = async (e) => {
     e.preventDefault()
     const content = e.target.note.value
+    newAnecdoteMutation.mutate({content})
     e.target.note.value = ''
-    dispatch(createNote(content))
-    dispatch(setNotificationWithTimeout(`you create anecdote: ${content}`))
   }
   
   return (

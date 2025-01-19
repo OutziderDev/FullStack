@@ -1,16 +1,14 @@
 //import { useSelector, useDispatch } from 'react-redux'
-import {voteOf} from '../reducers/anecdoteReducer'
-import { setNotificationWithTimeout } from '../reducers/notificationReducer'
+//import {voteOf} from '../reducers/anecdoteReducer'
+//import { setNotificationWithTimeout } from '../reducers/notificationReducer'
 import {useQuery} from '@tanstack/react-query'
 import { getAllAnecdotes } from '../services/anecdotes'
 //import axios from 'axios'
 
 const AnecdoteList = () => {
-  //const dispatch = useDispatch()
-
   const result = useQuery({
     queryKey: ['anecdotes'],
-    queryFn: getAllAnecdotes,//() => axios.get('http://localhost:3001/anecdotes').then(res => res.data),
+    queryFn: getAllAnecdotes,
     retry:false
   })
 
@@ -25,7 +23,7 @@ const AnecdoteList = () => {
 
 
 
-  const vote = (obj,content) => {
+  const vote = () => {
       //dispatch(voteOf(obj))
       //dispatch(setNotificationWithTimeout(`you vote for: ${content}`,1000))
       console.log('vamos por aqui');

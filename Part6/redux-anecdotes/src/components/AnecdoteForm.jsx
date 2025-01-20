@@ -9,21 +9,23 @@ const AnecdoteForm = () => {
   
   const newAnecdoteMutation = useMutation({
     mutationFn:createAnecdote,
-    onSuccess:queryClient.invalidateQueries({queryKey: ['anecdotes']})
+    onSuccess:queryClient.invalidateQueries({queryKey: ['anecdotes']}),
+    onError: (error) => {
+      dispatch(`Error: ${error.response.data.error}`)
+      setTimeout(() => {
+        dispatch('')
+      }, 5000);
+    }
   })
 
   const addAnecdote = async (e) => {
     e.preventDefault()
     const content = e.target.note.value
     
-    if (content.length >= 5) {  
-      newAnecdoteMutation.mutate({content})
-      e.target.note.value = ''
-      dispatch(`New anecdote added: ${content}`)
-    }else{
-      alert("need more than 4 character")
-      e.target.note.value = ''
-    }
+    newAnecdoteMutation.mutate({content})
+    e.target.note.value = ''
+    dispatch(`New anecdote added: ${content}`)
+    
   }
   
   return (

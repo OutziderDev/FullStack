@@ -2,7 +2,6 @@ import { useNotification } from "../hooks/useNotification"
 
 const Notification = () => {
   const notification  = useNotification()
-  console.log(notification);
   
   if (!notification) {
     return null

@@ -1,9 +1,10 @@
-//import { setNotificationWithTimeout } from '../reducers/notificationReducer'
 import {useQuery,useMutation, useQueryClient} from '@tanstack/react-query'
 import { getAllAnecdotes,updateAnecdote } from '../services/anecdotes'
+import {useSetNotification} from '../hooks/useNotification'
 
 const AnecdoteList = () => {
   const queryClient = useQueryClient()
+  const dispatch = useSetNotification()
 
   const newMutation = useMutation({
     mutationFn:updateAnecdote,
@@ -27,6 +28,7 @@ const AnecdoteList = () => {
 
   const vote = (anecdote) => {
       newMutation.mutate({...anecdote,votes: anecdote.votes + 1})
+      dispatch(`You vote for: ${anecdote.content}`)
   }
 
   return (

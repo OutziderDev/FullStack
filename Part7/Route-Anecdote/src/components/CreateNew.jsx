@@ -16,10 +16,14 @@ const CreateNew = (props) => {
     })
   }
 
+  const style = {
+    gap:10,
+    margin:20
+  }
   return (
     <div>
       <h2>create a new anecdote</h2>
-      <form onSubmit={handleSubmit}>
+      <form style={style} onSubmit={handleSubmit}>
         <div>
           content
           <input name='content' value={content} onChange={(e) => setContent(e.target.value)} />

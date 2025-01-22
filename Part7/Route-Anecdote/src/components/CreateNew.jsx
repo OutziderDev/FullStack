@@ -1,4 +1,5 @@
 import { useState } from "react"
+import ProType from 'prop-types'
 
 const CreateNew = (props) => {
   const [content, setContent] = useState('')
@@ -44,3 +45,7 @@ const CreateNew = (props) => {
 }
 
 export default CreateNew
+
+CreateNew.propTypes = {
+  addNew: ProType.func.isRequired
+}

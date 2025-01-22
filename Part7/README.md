@@ -1,9 +1,11 @@
 # Full Stack Open - Helsinki - BACKEND
 
-Repositorio donde se encuentran desarrollados los modulos de la parte 6 del modulo de FullStack Open.
-En esta modulo se abordo una gran practica el control de componentes con reac redux para poder acceder desde cualquier componente.
+Carpeta donde se encuentran desarrollados los modulos de la parte 7 del modulo de FullStack Open.
+En esta modulo se llevan las practicas de manejo de interfaz con React Router y de Hooks personalizados.
+
 Entre los ejercicios desarrollados estan los siguientes:
 
 ## Part 7 - A 
 
-- 6.1 React Router Anecdotes (paso 1: )
+- 7.1 React Router Anecdotes (paso 1: Aplicando React Router para eliminar el menu manual de la plantilla por Links del router)
+- 7.2 React Router Anecdotes (paso 2: Creando una ruta especifica parametrizada para poder ver el contenido de cada anecdota)

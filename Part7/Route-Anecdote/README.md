@@ -1,8 +1,11 @@
-# React + Vite
+# Full Stack Open - Helsinki - BACKEND
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Carpeta donde se encuentran desarrollados los modulos de la parte 7 del modulo de FullStack Open.
+En esta modulo se llevan las practicas de manejo de interfaz con React Router y de Hooks personalizados.
 
-Currently, two official plugins are available:
+Entre los ejercicios desarrollados estan los siguientes:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Part 7 - A 
+
+- 7.1 React Router Anecdotes (paso 1: Aplicando React Router para eliminar el menu manual de la plantilla por Links del router)
+- 7.2 React Router Anecdotes (paso 2: Creando una ruta especifica parametrizada para poder ver el contenido de cada anecdota)

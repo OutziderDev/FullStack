@@ -25,11 +25,18 @@ const App = () => {
     }
   ])
 
-  //const [notification, setNotification] = useState('')
+  const [notification, setNotification] = useState('')
 
   const addNew = (anecdote) => {
     anecdote.id = Math.round(Math.random() * 10000)
     setAnecdotes(anecdotes.concat(anecdote))
+  }
+
+  const seeNotification = ( data ) => {
+    setNotification(data)
+    setTimeout(() => {
+      setNotification('')
+    }, 5000)
   }
 
   //const anecdoteById = (id) =>    anecdotes.find(a => a.id === id)
@@ -45,11 +52,21 @@ const App = () => {
     setAnecdotes(anecdotes.map(a => a.id === id ? voted : a))
   }*/
   const style = {
-    margin:10
+    margin: 10,
+  }
+
+  const styleNoti = {
+    margin:20,
+    padding: 10,
+    border: "3px solid green",
+    borderRadius: 10,
+    background: 'lightgray',
+    color: 'darkgreen'
   }
   return (
     <div>
-      <h1>Software anecdotes</h1>
+      <h1 >Software anecdotes</h1>
+      
       <Router>
         <div>
           <Link style={style} to="/" >anecdotes</Link>
@@ -60,13 +77,18 @@ const App = () => {
         <Routes>
           <Route path='/' element={<AnecdoteList anecdotes={anecdotes} />}/>
           <Route path='/anecdote/:id' element={<Anecdote anecdotes={anecdotes} />}/>
-          <Route path='/create' element={<CreateNew addNew={addNew} />}/>
+          <Route path='/create' element={<CreateNew addNew={addNew} seeNotification={seeNotification} />}/>
           <Route path='/about' element={<About />}/>
         </Routes>
 
         <Footer />
+        <br />
+        {
+          notification === '' ? null : <span style={styleNoti}>{notification}</span>
+        }
 
       </Router>
+
     </div>
   )
 }

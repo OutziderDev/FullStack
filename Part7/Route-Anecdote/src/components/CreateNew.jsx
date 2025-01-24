@@ -1,10 +1,12 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import ProType from 'prop-types'
 
 const CreateNew = (props) => {
   const [content, setContent] = useState('')
   const [author, setAuthor] = useState('')
   const [info, setInfo] = useState('')
+  const navigate = useNavigate()
 
 
   const handleSubmit = (e) => {
@@ -15,6 +17,8 @@ const CreateNew = (props) => {
       info,
       votes: 0
     })
+    props.seeNotification('Anecdote is add succesfull')
+    navigate('/')
   }
 
   const style = {
@@ -47,5 +51,6 @@ const CreateNew = (props) => {
 export default CreateNew
 
 CreateNew.propTypes = {
-  addNew: ProType.func.isRequired
+  addNew: ProType.func.isRequired,
+  seeNotification: ProType.func.isRequired
 }

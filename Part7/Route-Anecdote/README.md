@@ -14,3 +14,4 @@ Entre los ejercicios desarrollados estan los siguientes:
 ## Part 7 - B
 - 7.4 Hook in Anecdotes (paso 1: Creando un hook personalizado para simplificar el codigo de los input en el formulario)
 - 7.5 Hook in Anecdotes (paso 2: Implementando un boton para resetear los campos del formulario y actualizando el hook)
+- 7.6 Hook in Anecdotes (paso 3: Reparando el warning al aplicar reset en los input, desestructurando el Spread)

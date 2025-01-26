@@ -10,3 +10,7 @@ Entre los ejercicios desarrollados estan los siguientes:
 - 7.1 React Router Anecdotes (paso 1: Aplicando React Router para eliminar el menu manual de la plantilla por Links del router)
 - 7.2 React Router Anecdotes (paso 2: Creando una ruta especifica parametrizada para poder ver el contenido de cada anecdota)
 - 7.3 React Router Anecdotes (paso 3: Implementando el uso de useNavigate para regresar a la lista al crear una anecdotanueva)
+
+## Part 7 - B
+- 7.4 Hook in Anecdotes (paso 1: Creando un hook personalizado para simplificar el codigo de los input en el formulario)
+- 7.5 Hook in Anecdotes (paso 2: Implementando un boton para resetear los campos del formulario y actualizando el hook)

@@ -20,6 +20,12 @@ const CreateNew = (props) => {
     navigate('/')
   }
 
+  const handleReset = () => {
+    content.reset()
+    author.reset()
+    info.reset()
+  }
+
   const style = {
     margin:5
   }
@@ -33,6 +39,7 @@ const CreateNew = (props) => {
         <div>          url for more info <input style={style} {...info} /></div>
         <button style={{width: "20%", cursor:"pointer", margin: 10}}>create</button>
       </form>
+      <button style={{cursor:"pointer", background:"pink",borderRadius:5}} onClick={handleReset}>reset</button>
     </div>
   )
 

@@ -1,20 +1,19 @@
-import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import ProType from 'prop-types'
+import { useField } from "../hooks/hooks"
 
 const CreateNew = (props) => {
-  const [content, setContent] = useState('')
-  const [author, setAuthor] = useState('')
-  const [info, setInfo] = useState('')
   const navigate = useNavigate()
-
+  const content = useField('text')  
+  const author = useField('text')
+  const info = useField('text')
 
   const handleSubmit = (e) => {
     e.preventDefault()
     props.addNew({
-      content,
-      author,
-      info,
+      content: content.value,
+      author: author.value,
+      info: info.value,
       votes: 0
     })
     props.seeNotification('Anecdote is add succesfull')
@@ -22,26 +21,17 @@ const CreateNew = (props) => {
   }
 
   const style = {
-    gap:10,
-    margin:20
+    margin:5
   }
+
   return (
     <div>
       <h2>create a new anecdote</h2>
-      <form style={style} onSubmit={handleSubmit}>
-        <div>
-          content
-          <input name='content' value={content} onChange={(e) => setContent(e.target.value)} />
-        </div>
-        <div>
-          author
-          <input name='author' value={author} onChange={(e) => setAuthor(e.target.value)} />
-        </div>
-        <div>
-          url for more info
-          <input name='info' value={info} onChange={(e)=> setInfo(e.target.value)} />
-        </div>
-        <button>create</button>
+      <form onSubmit={handleSubmit}>
+        <div>          content      <input style={style} {...content}/>        </div>
+        <div>          author       <input  style={style} {...author} />       </div>
+        <div>          url for more info <input style={style} {...info} /></div>
+        <button style={{width: "20%", cursor:"pointer", margin: 10}}>create</button>
       </form>
     </div>
   )

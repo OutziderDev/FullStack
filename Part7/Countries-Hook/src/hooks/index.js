@@ -4,8 +4,15 @@ import axios from 'axios'
 export const useCountry = (name) => {
   const [country, setCountry] = useState(null)
 
-  useEffect(() => {})
+  useEffect(()=>{
+    if(name === '') return setCountry(null)
 
+    axios
+      .get(`https://studies.cs.helsinki.fi/restcountries/api/name/${name}`)
+      .then(Response=> setCountry({...Response.data,found: true}))
+      .catch(()=> setCountry({found: false})) 
+  },[name])
+  //country ? console.log('contry', country.name.common ) : console.log('no country')
   return country
 }
 

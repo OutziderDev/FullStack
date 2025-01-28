@@ -12,12 +12,11 @@ const App = () => {
   const fetch = (e) => {
     e.preventDefault()
     setName(nameInput.value)
-    console.log('hola')
   }
 
   return (
     <div className='container mx-auto max-w-2xl'>
-      <h1 className='text-white uppercase text-center text-7xl m-10 text-wrap'>Detalles de Paises</h1>
+      <h1 className='text-white uppercase text-center text-7xl m-10 text-wrap font-bold'>Detalles de Paises</h1>
       <form className='' onSubmit={fetch}>
         <StarBorder
           as="div"

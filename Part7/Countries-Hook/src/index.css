@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+@theme{
+  --font-primary: 'Sora Variable', sans-serif;
+}
+
+.mask-flag {
+  mask-image: url("https://cdn.lavelada.dev/flags/maskflag.webp");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  mask-origin: content-box;
+  mask-clip: content-box;
+  mask-composite: source-in;
+  mask-mode: alpha;
+}
 .star-border-container {
   display: inline-block;
   padding: 2px 0;

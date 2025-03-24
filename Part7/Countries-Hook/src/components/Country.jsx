@@ -23,10 +23,13 @@ const Country = ({ country }) => {
         <div>population {country.population}</div>
         <img src={country.flags.svg} height='100' className="mask-flag" alt={`flag of ${country.name.common}`}/>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <CountryMiniCard nombre={country.name.common} imagen={country.flags.svg} poblacion={country.population}/>
-          <CountryMiniCard nombre={country.name.common} imagen={country.flags.svg} poblacion={country.population}/>
-          <CountryMiniCard nombre={country.name.common} imagen={country.flags.svg} poblacion={country.population}/>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-8"> 
+          <CountryMiniCard nombre={country.name.common} capital={country.capital} imagen={country.flags.svg} poblacion={country.population}/>
+          <CountryMiniCard nombre={country.name.common} capital={country.capital} imagen={country.flags.svg} poblacion={country.population}/>
+          <CountryMiniCard nombre={country.name.common} capital={country.capital} imagen={country.flags.svg} poblacion={country.population}/>
+          <CountryMiniCard nombre={country.name.common} capital={country.capital} imagen={country.flags.svg} poblacion={country.population}/>
+          <CountryMiniCard nombre={country.name.common} capital={country.capital} imagen={country.flags.svg} poblacion={country.population}/>
+
         </div>
       </div>
     </>

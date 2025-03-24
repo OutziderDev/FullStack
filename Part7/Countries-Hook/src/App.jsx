@@ -21,8 +21,7 @@ const App = () => {
 
         <div className='max-w-6xl mx-auto'>
           <h1 className='text-white font-primary uppercase text-center text-6xl pt-20 text-wrap font-bold -skew-3'>GeoMundi Digital </h1>
-
-          <p className='text-center text-cyan-300 backdrop-blur-sm select-none  font-bold my-8 py-4 text-3xl -skew-3 animate-pulse'>Revisa informacion del pais de tu curiosidad</p>
+          <h2 className='text-center text-4xl text-cyan-300 backdrop-blur-sm select-none my-8 py-4  -skew-3 animate-pulse'>Revisa informacion del pais de tu curiosidad</h2>
         
           <form className='pb-10' onSubmit={fetch}>
             <StarBorder

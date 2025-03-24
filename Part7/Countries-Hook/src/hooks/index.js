@@ -17,6 +17,7 @@ export const useCountry = (name) => {
         const data = await response.json();
         setCountry({ ...data, found: true });
       } catch (error) {
+        console.error(error);
         setCountry({ found: false });
       }
     };

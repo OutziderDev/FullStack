@@ -17,3 +17,6 @@ Entre los ejercicios desarrollados estan los siguientes:
 - 7.6 Hook in Anecdotes (paso 3: Reparando el warning al aplicar reset en los input, desestructurando el Spread)
 - 7.7 Hook Country (paso 1: Creando un hook personalizado para mostrar el pais seleccionado por el usuario y cargando los datos con axios)
 - 7.8 Definitive Hook (paso 1: Dado que el codigo responsable de comunicarse con el backend puede ser generico, se separo en un hook propio para establecer esta comunicacion)
+
+## Parte 7 - F
+- 7.9 Formateo automatico de codigo (El ejercicio consiste en ver la documentacion de Prettier y aplicarlo al proyecto)

@@ -1,18 +1,29 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 
 export const useCountry = (name) => {
   const [country, setCountry] = useState(null)
 
-  useEffect(()=>{
-    if(name === '') return setCountry(null)
+  useEffect(() => {
+    if (!name) return setCountry(null);
 
-    axios
-      .get(`https://studies.cs.helsinki.fi/restcountries/api/name/${name}`)
-      .then(Response=> setCountry({...Response.data,found: true}))
-      .catch(()=> setCountry({found: false})) 
-  },[name])
-  //country ? console.log('contry', country.name.common ) : console.log('no country')
+    const fetchCountry = async () => {
+      try {
+        const response = await fetch(
+          `https://studies.cs.helsinki.fi/restcountries/api/name/${name}`
+        );
+
+        if (!response.ok) throw new Error("Country not found");
+
+        const data = await response.json();
+        setCountry({ ...data, found: true });
+      } catch (error) {
+        setCountry({ found: false });
+      }
+    };
+
+    fetchCountry();
+  }, [name]);
+
   return country
 }
 

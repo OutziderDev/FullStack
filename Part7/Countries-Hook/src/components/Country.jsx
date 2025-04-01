@@ -1,22 +1,31 @@
 import PropTypes from 'prop-types';
+import DetailCountry from '../components/DetailCountry'
 import CountryMiniCard from '../components/ContryMiniCard';
 
-const Country = ({ country }) => {
+const Country = ({ country, filter }) => {
+  console.log('paiese',country);
+  console.log('filtro',filter);
   
-  if (!country) { 
+  
+  //const findContrie = filter ? country.filter(countries => countries.name.common.toLowerCase().include(filter.toLowerCase())) : []
+  //const exactlyCountry = findContrie.length === 1 ? findContrie[0] : null
+  
+  if (!country || !filter) { 
     return null
-  }
-
-  if (!country.found) {
-    return (
-      <div className="text-white max-w-6xl mx-auto text-4xl italic font-bold p-4 text-pretty">
-        Not found... Maybe there are no matches for that name...
-      </div>
-    )
   }
 
   return (
     <>
+      {
+            findContrie.length > 10 
+            ? (<div className="text-white max-w-6xl mx-auto text-4xl italic font-bold p-4 text-pretty">
+                Not found... Maybe there are no matches for that name...
+                </div>) 
+            : findContrie.length === 1 ? (<DetailCountry data={exactlyCountry} />) 
+            : (<ul>
+                {findContrie.map(c => <CountryMiniCard key={c.name.common} nombre={c.name.common} capital={c.capital} imagen={c.flags.svg} poblacion={c.population}/>)}
+              </ul>)        
+        } 
       {/* <div className="text-white max-w-6xl mx-auto">
         <h3>{country.name.common} </h3>
         <div>capital {country.capital} </div>
@@ -37,7 +46,8 @@ const Country = ({ country }) => {
 }
 
 Country.propTypes = {
-  country: PropTypes.object 
+  country: PropTypes.object,
+  filter: PropTypes.object 
 }
 
 export default Country

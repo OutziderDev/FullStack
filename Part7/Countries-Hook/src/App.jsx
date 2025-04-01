@@ -1,18 +1,13 @@
-import  { useState } from 'react'
 import { useField, useCountry } from './hooks'
 import Country from './components/Country'
 import StarBorder from './components/StarBorder'
 
 const App = () => {
   const nameInput = useField('text')
-  const [filter, setFilter] = useState('')
   const countries = useCountry()
-  console.log(countries);
-  
  
   const fetch = (e) => {
     e.preventDefault() 
-    setFilter(nameInput.value)
   }
 
   return (
@@ -46,7 +41,7 @@ const App = () => {
         </div>  
       </div>
 
-      <Country country={countries} filter={filter}/>
+      <Country country={countries} filter={nameInput}/>
     </div>
   )
 }

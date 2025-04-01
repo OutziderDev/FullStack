@@ -1,18 +1,16 @@
 import { useState, useEffect } from 'react'
 
-export const useCountry = (name) => {
+export const useCountry = () => {
   const [country, setCountry] = useState(null)
 
   useEffect(() => {
-    if (!name) return setCountry(null);
-
-    const fetchCountry = async () => {
+    const fetchCountries = async () => {
       try {
         const response = await fetch(
-          `https://studies.cs.helsinki.fi/restcountries/api/name/${name}`
+          `https://studies.cs.helsinki.fi/restcountries/api/all` /*''name/${name}`*/
         );
 
-        if (!response.ok) throw new Error("Country not found");
+        if (!response.ok) throw new Error("Countries not found");
 
         const data = await response.json();
         setCountry({ ...data, found: true });
@@ -22,15 +20,14 @@ export const useCountry = (name) => {
       }
     };
 
-    fetchCountry();
-  }, [name]);
+    fetchCountries();
+  }, []);
 
   return country
 }
 
 export const useField = (type) => {
   const [value, setValue] = useState('')
-
   const onChange = (event) => {
     setValue(event.target.value)
   }

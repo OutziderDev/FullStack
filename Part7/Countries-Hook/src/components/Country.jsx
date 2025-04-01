@@ -9,15 +9,15 @@ const Country = ({ country }) => {
 
   if (!country.found) {
     return (
-      <div className="text-white">
-        not found...
+      <div className="text-white max-w-6xl mx-auto text-4xl italic font-bold p-4 text-pretty">
+        Not found... Maybe there are no matches for that name...
       </div>
     )
   }
 
   return (
     <>
-      <div className="text-white max-w-6xl mx-auto">
+      {/* <div className="text-white max-w-6xl mx-auto">
         <h3>{country.name.common} </h3>
         <div>capital {country.capital} </div>
         <div>population {country.population}</div>
@@ -31,7 +31,7 @@ const Country = ({ country }) => {
           <CountryMiniCard nombre={country.name.common} capital={country.capital} imagen={country.flags.svg} poblacion={country.population}/>
 
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

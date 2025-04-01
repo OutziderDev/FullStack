@@ -5,12 +5,14 @@ import StarBorder from './components/StarBorder'
 
 const App = () => {
   const nameInput = useField('text')
-  const [name, setName] = useState('')
-  const country = useCountry(name)
-
+  const [filter, setFilter] = useState('')
+  const countries = useCountry()
+  console.log(countries);
+  
+ 
   const fetch = (e) => {
     e.preventDefault() 
-    setName(nameInput.value)
+    setFilter(nameInput.value)
   }
 
   return (
@@ -19,9 +21,10 @@ const App = () => {
 
         <div className=" absolute bg-[url('/fondo.webp')] [mask-image:linear-gradient(black_70%,transparent)] inset-0 bg-cover bg-bottom w-full  grayscale-50"></div>
 
-        <div className='max-w-6xl mx-auto'>
-          <h1 className='text-white font-primary uppercase text-center text-6xl pt-20 text-wrap font-bold -skew-3'>GeoMundi Digital </h1>
-          <h2 className='text-center text-4xl text-cyan-300 backdrop-blur-sm select-none my-8 py-4  -skew-3 animate-pulse'>Revisa informacion del pais de tu curiosidad</h2>
+        <div className='max-w-6xl mx-auto text-center '>
+          <h1 className='text-white font-primary uppercase text-6xl pt-20 text-wrap font-bold -skew-3'> GeoMundi Digital </h1>
+          <br />
+          <p className='text-2xl font-bold  text-cyan-300 backdrop-blur-sm select-none my-8 py-2  -skew-3 animate-pulse'> Check information about the country you are interested in. </p>
         
           <form className='pb-10' onSubmit={fetch}>
             <StarBorder
@@ -43,7 +46,7 @@ const App = () => {
         </div>  
       </div>
 
-      <Country country={country} />
+      <Country country={countries} filter={filter}/>
     </div>
   )
 }

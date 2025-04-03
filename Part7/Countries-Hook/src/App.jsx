@@ -1,49 +1,45 @@
-import { useField, useCountry } from './hooks'
-import Country from './components/Country'
-import StarBorder from './components/StarBorder'
+import { useFilter, useCountry } from './hooks/index';
+import Country from './components/Country';
+import StarBorder from './components/StarBorder';
 
 const App = () => {
-  const nameInput = useField('text')
-  const countries = useCountry()
+  const {filter} = useFilter(); // Ahora usamos el filtro global
+  console.log('filtro',filter);
+  const countries = useCountry();
  
-  const fetch = (e) => {
-    e.preventDefault() 
-  }
-
+ 
   return (
     <div className='w-full h-full'>
-      <div className='relative  '>
+      <div className='relative'>
 
-        <div className=" absolute bg-[url('/fondo.webp')] [mask-image:linear-gradient(black_70%,transparent)] inset-0 bg-cover bg-bottom w-full  grayscale-50"></div>
+        <div className="absolute bg-[url('/fondo.webp')] [mask-image:linear-gradient(black_50%,transparent)] inset-0 bg-cover bg-bottom w-full grayscale-50"></div>
 
-        <div className='max-w-6xl mx-auto text-center '>
-          <h1 className='text-white font-primary uppercase text-6xl pt-20 text-wrap font-bold -skew-3'> GeoMundi Digital </h1>
+        <div className='max-w-6xl mx-auto text-center'>
+          <h1 className='text-white font-primary uppercase text-6xl pt-20 text-wrap font-bold -skew-3'>
+            GeoMundi Digital
+          </h1>
           <br />
-          <p className='text-2xl font-bold  text-cyan-300 backdrop-blur-sm select-none my-8 py-2  -skew-3 animate-pulse'> Check information about the country you are interested in. </p>
-        
-          <form className='pb-10' onSubmit={fetch}>
-            <StarBorder
-              as="div"
-              className="w-full"
-              color="white"
-              speed="4s"
-            >
-              <div className='flex justify-between'>  
-                <input
-                  {...nameInput} 
-                  placeholder="Escribe tu país: Mexico..."
-                  className="bg-transparent border-none outline-none text-white placeholder-gray-400 w-full p-2"
-                />
-                <button className=' text-white px-4 py-2 rounded hover:cursor-pointer hover:bg-amber-50/10'>Buscar</button>
-              </div>
-            </StarBorder>
-          </form>
+          <p className='text-2xl font-bold text-cyan-300 backdrop-blur-sm select-none my-8 py-2 -skew-3 animate-pulse'>
+            Check information about the country you are interested in.
+          </p>
+          
+          <StarBorder as="div" className="max-w-xl md:w-full " color="white" speed="4s">
+            <div className='flex justify-between'>  
+              <input
+                value={filter.value}
+                onChange={filter.onChange}
+                placeholder="Escribe tu país: Mexico..."
+                className="bg-transparent border-none outline-none text-white placeholder-gray-400 w-full p-2"
+              />         
+            </div>
+          </StarBorder>
+          
         </div>  
       </div>
 
-      <Country country={countries} filter={nameInput}/>
-    </div>
-  )
-}
+{/*       <Country country={countries} filter={filter.value}/> 
+ */}    </div>
+  );
+};
 
-export default App
+export default App;

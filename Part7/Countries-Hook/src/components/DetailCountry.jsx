@@ -1,6 +1,6 @@
 import ProTypes from 'prop-types'
 
-const DetailCountry = ({data}) => {
+const DetailCountry = ({ data }) => {
   return (
     <>  
       <div className="text-white max-w-6xl mx-auto">

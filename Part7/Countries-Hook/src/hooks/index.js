@@ -1,29 +1,33 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { CountryContext } from '../CountryContext' 
 
 export const useCountry = () => {
   const [country, setCountry] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     const fetchCountries = async () => {
       try {
         const response = await fetch(
-          `https://studies.cs.helsinki.fi/restcountries/api/all` /*''name/${name}`*/
+          `https://studies.cs.helsinki.fi/restcountries/api/all`
         );
 
         if (!response.ok) throw new Error("Countries not found");
 
         const data = await response.json();
-        setCountry({ ...data, found: true });
+        setCountry(data);
       } catch (error) {
-        console.error(error);
-        setCountry({ found: false });
+        setError(error.message)
+      } finally{
+        setLoading(false)
       }
     };
 
     fetchCountries();
   }, []);
 
-  return country
+  return {country, loading, error}
 }
 
 export const useField = (type) => {
@@ -32,9 +36,16 @@ export const useField = (type) => {
     setValue(event.target.value)
   }
 
+  const reset = () => setValue('')
+
   return {
     type,
     value,
-    onChange
+    onChange,
+    reset
   }
+}
+
+export const useFilter = () => {
+  return useContext(CountryContext)
 }

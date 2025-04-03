@@ -7,8 +7,8 @@ const Country = ({ country, filter }) => {
   console.log('filtro',filter);
   
   
-  //const findContrie = filter ? country.filter(countries => countries.name.common.toLowerCase().include(filter.toLowerCase())) : []
-  //const exactlyCountry = findContrie.length === 1 ? findContrie[0] : null
+  const findContrie = filter ? country.filter(countries => countries.name.common.toLowerCase().include(filter.toLowerCase())) : []
+  const exactlyCountry = findContrie.length === 1 ? findContrie[0] : null
   
   if (!country || !filter) { 
     return null

@@ -11,7 +11,6 @@ const Country = ({ country: AllCountries, filter }) => {
   : [];
   
   const exactlyCountry = findContrie.length === 1 ? findContrie[0] : null
-  console.log('el exacto', exactlyCountry);
     
   return (
     <>

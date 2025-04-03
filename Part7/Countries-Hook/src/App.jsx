@@ -4,7 +4,6 @@ import StarBorder from './components/StarBorder';
 
 const App = () => {
   const {filter} = useFilter(); // Ahora usamos el filtro global
-  console.log('filtro',filter);
   const countries = useCountry();
  
  
@@ -15,11 +14,12 @@ const App = () => {
         <div className="absolute bg-[url('/fondo.webp')] [mask-image:linear-gradient(black_50%,transparent)] inset-0 bg-cover bg-bottom w-full grayscale-50"></div>
 
         <div className='max-w-6xl mx-auto text-center'>
-          <h1 className='text-white font-primary uppercase text-6xl pt-20 text-wrap font-bold -skew-3'>
-            GeoMundi Digital
+
+          <h1 className='text-white font-primary uppercase text-3xl font-bold md:text-6xl pt-20 text-wrap -skew-3'>
+            GeoMundi
           </h1>
           <br />
-          <p className='text-2xl font-bold text-cyan-300 backdrop-blur-sm select-none my-8 py-2 -skew-3 animate-pulse'>
+          <p className='text-xl md:text-3xl font-bold text-cyan-300 backdrop-blur-sm select-none my-8 py-2 -skew-3 text-balance animate-pulse'>
             Check information about the country you are interested in.
           </p>
           
@@ -37,8 +37,8 @@ const App = () => {
         </div>  
       </div>
 
-{/*       <Country country={countries} filter={filter.value}/> 
- */}    </div>
+      <Country country={countries} filter={filter.value}/> 
+    </div>
   );
 };
 

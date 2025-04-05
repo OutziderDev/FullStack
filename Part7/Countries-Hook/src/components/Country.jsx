@@ -15,7 +15,7 @@ const Country = ({ country: AllCountries, filter }) => {
   return (
     <>
       {
-        findContrie.length > 10 
+        findContrie.length > 10 || (findContrie.length === 0 && filter)
         ? (<div className="text-white max-w-6xl mx-auto text-4xl italic text-center font-bold p-4 text-pretty">
             Not found... Maybe there are no matches for that name...
             </div>) 

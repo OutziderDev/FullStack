@@ -7,7 +7,7 @@ const App = () => {
   const countries = useCountry();
  
   return (
-    <div className='w-full h-full'>
+    <main className='w-full h-full'>
       <div className='relative'>
 
         <div className="absolute bg-[url('/fondo.webp')] [mask-image:linear-gradient(black_50%,transparent)] inset-0 bg-cover bg-bottom w-full grayscale-50"></div>
@@ -38,7 +38,7 @@ const App = () => {
       </div>
 
       <Country country={countries} filter={filter.value}/> 
-    </div>
+    </main>
   );
 };
 

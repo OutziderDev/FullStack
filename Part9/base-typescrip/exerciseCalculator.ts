@@ -1,25 +1,29 @@
-interface Result {
-  periodLength: number;
-  trainingDays: number;
-  success: boolean;
-  rating: number;
-  ratingDescription: string;
-  target: number;
-  average: number;
+interface InputData {
+  target : number,
+  data: number[]
 }
 
-// 2. Función principal
-const calculateExercises = (dailyHours: number[], target: number): Result => {
-  const periodLength = dailyHours.length;
-  const trainingDays = dailyHours.filter(h => h > 0).length;
-  const totalHours = dailyHours.reduce((sum, h) => sum + h, 0);
-  const average = totalHours / periodLength;
-  const success = average >= target;
+interface Result { 
+  periodLength: number,
+  trainingDays: number,
+  success: boolean,
+  rating: number,
+  ratingDescription: string,
+  target: number,
+  average: number
+}
+
+const calculateExercises = (data: number[], target: number) : Result => {
+  const periodLength = data.length
+  const trainingDays = data.filter(traning => traning > 0).length
+  const totalHours = data.reduce((sum, hours) => sum + hours, 0)
+  const average = totalHours/ periodLength
+  const success = average >= target
 
   // Definir rating
   let rating: number;
   let ratingDescription: string;
-
+ 
   if (average >= target) {
     rating = 3;
     ratingDescription = 'excellent, you met your goal!';
@@ -31,16 +35,15 @@ const calculateExercises = (dailyHours: number[], target: number): Result => {
     ratingDescription = 'you need to put in more effort';
   }
 
-  return {
+  return { 
     periodLength,
-    trainingDays,
+    trainingDays, 
     success,
     rating,
     ratingDescription,
     target,
-    average
-  };
-};
+    average,
+  }
+}
 
-console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2));
-
+console.log(calculateExercises([1 ,0, 2, 4.5, 0, 3, 1, 0, 4], 2));

@@ -46,4 +46,32 @@ const calculateExercises = (data: number[], target: number) : Result => {
   }
 }
 
-console.log(calculateExercises([1 ,0, 2, 4.5, 0, 3, 1, 0, 4], 2));
+const ParseArguments = (args: string[]): InputData => {
+  if (args.length < 4) { // node, archivo, target, al menos un número
+    throw new Error('Not enough arguments. Usage: target followed by daily hours');
+  }
+
+  const [, , targetArg, ...rest] = args;
+  const target = Number(targetArg);
+  const data = rest.map(num => Number(num));
+
+  if (isNaN(target) || data.some(num => isNaN(num))) {
+    throw new Error('All arguments must be numbers.');
+  }
+
+  return {
+    target,
+    data
+  };
+};
+
+try {
+  const { target, data } = ParseArguments(process.argv);
+  console.log(calculateExercises(data, target));
+} catch (error: unknown) {
+  let errorMessage = 'Something went wrong.';
+  if (error instanceof Error) {
+    errorMessage += ' Error: ' + error.message;
+  }
+  console.log(errorMessage);
+}

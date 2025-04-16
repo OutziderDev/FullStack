@@ -1,7 +1,9 @@
 import express, {Request,Response} from 'express'
 import { calculateBmi } from './bmiCalculator'
+import { calculateExercises } from './exerciseCalculator'
 
 const app = express();
+app.use(express.json())
 const PORT = 3002;
 
 app.get('/bmi', (req: Request , res: Response ) : void => {
@@ -22,6 +24,26 @@ app.get('/bmi', (req: Request , res: Response ) : void => {
     weight: b,
     bmi
   }) 
+})
+
+app.post('/exercises', (req :Request, res: Response)   => {
+  const { daily_exercises, target } = req.body;
+
+  if (!daily_exercises || target === undefined) {
+    res.status(400).json({ error: "parameters missing" });
+    return;
+  }
+
+  const isValidArray = Array.isArray(daily_exercises) && daily_exercises.every(n => typeof n === 'number');
+  const isValidTarget = typeof target === 'number';
+
+  if (!isValidArray || !isValidTarget) {
+    res.status(400).json({ error: "malformatted parameters" });
+    return;
+  }
+
+  const result = calculateExercises(daily_exercises, target);
+  res.json(result);
 })
 
 app.listen(PORT, () => {

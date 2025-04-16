@@ -1,9 +1,9 @@
-interface InputData {
+/* interface InputData {
   target : number,
   data: number[]
-}
+} */
 
-interface Result { 
+export interface Result { 
   periodLength: number,
   trainingDays: number,
   success: boolean,
@@ -13,7 +13,7 @@ interface Result {
   average: number
 }
 
-const calculateExercises = (data: number[], target: number) : Result => {
+export const calculateExercises = (data: number[], target: number) : Result => {
   const periodLength = data.length
   const trainingDays = data.filter(traning => traning > 0).length
   const totalHours = data.reduce((sum, hours) => sum + hours, 0)
@@ -46,7 +46,7 @@ const calculateExercises = (data: number[], target: number) : Result => {
   }
 }
 
-const ParseArguments = (args: string[]): InputData => {
+/* const ParseArguments = (args: string[]): InputData => {
   if (args.length < 4) { // node, archivo, target, al menos un número
     throw new Error('Not enough arguments. Usage: target followed by daily hours');
   }
@@ -74,4 +74,4 @@ try {
     errorMessage += ' Error: ' + error.message;
   }
   console.log(errorMessage);
-}
+} */

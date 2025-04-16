@@ -1,25 +1,6 @@
-interface MultiplyValues {
-  a: number;
-  b: number;
-}
-
-const parseArguments = (args: string[]): MultiplyValues => {
-  if (args.length < 4) throw new Error('Not enough arguments');
-  if (args.length > 4) throw new Error('Too many arguments');
-
-  if (!isNaN(Number(args[2])) && !isNaN(Number(args[3]))) {
-    return {
-      a: Number(args[2]),
-      b: Number(args[3])
-    }
-  } else {
-    throw new Error('Provided values were not numbers!');
-  }
-}
-
-
-const calculateBmi = (a:number, b:number ): string => {
+export const calculateBmi = (a:number, b:number ): string => {
   const alturaCtm = a/100
+  
   const imc = b / Math.pow(alturaCtm,2) 
   
   if (imc < 18.5) {
@@ -31,17 +12,6 @@ const calculateBmi = (a:number, b:number ): string => {
   } else if (imc >= 30){
     return "Obesity"
   }
-}
 
-try{
-  const {a,b} = parseArguments(process.argv);
-  console.log(    calculateBmi(a,b)   );
-}catch (error : unknown) {
-  let errorMesage = 'Something bad happened.'
-  if (error instanceof Error){
-    errorMesage += 'Error: ' + error.message
-  }
-  console.log(errorMesage);
-  
+  return "Unknown"
 }
-

@@ -15,6 +15,10 @@ function App() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
+  const { setNotification } = useNotificationStore.getState()
+  console.log('la func es:', setNotification);
+  
+
 /*   const [notification, setNotification] = useState({message: null,type:null} )
  */  
   useEffect(() => {// Fetch blogs
@@ -35,7 +39,6 @@ function App() {
 
   const handleLogin = async (e) => {
     e.preventDefault()
-    const { setNotification } = useNotificationStore.getState()
 
     try {
       const userFromLogin = await loginService.login({username, password})
@@ -44,10 +47,7 @@ function App() {
       setUsername('')
       setPassword('')
     } catch (error) {
-      setNotification({message:error.response.data.error, type:'warning'})
-      setTimeout(() => {
-        setNotification({ message: null, type: null })
-      }, 3000)
+      setNotification(error.response.data.error, 'warning')
     }
    
   } 
@@ -68,7 +68,7 @@ function App() {
         {!user ? (
           <Login handleLogin={handleLogin} setUsername={setUsername} setPassword={setPassword} />
           ) : (
-          <Main blogs={blog} setBlogs={setBlog} user={user} handleLogout={handleLogout} setNotification={setNotification}  />
+          <Main blogs={blog} setBlogs={setBlog} user={user} handleLogout={handleLogout}   />
           )
         }
       </main>

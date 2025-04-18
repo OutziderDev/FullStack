@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
 import Notification from './Components/Subcomponents/Notification'
 import { useNotificationStore } from './store/notificationStore'
+import { useEffect, useState } from 'react'
 import Navbar from './Components/Navbar'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
@@ -16,11 +16,7 @@ function App() {
   const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
   const { setNotification } = useNotificationStore.getState()
-  console.log('la func es:', setNotification);
-  
-
-/*   const [notification, setNotification] = useState({message: null,type:null} )
- */  
+ 
   useEffect(() => {// Fetch blogs
     const fetchBlogs = async () => {
       const blogs = await blogService.getAll()
@@ -62,7 +58,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <main className='container mx-auto mt-3'>
+      <section className='container mx-auto mt-3'>
         <Header/>
         <Notification />
         {!user ? (
@@ -71,7 +67,7 @@ function App() {
           <Main blogs={blog} setBlogs={setBlog} user={user} handleLogout={handleLogout}   />
           )
         }
-      </main>
+      </section>
       <Footer/>
     </>
   )

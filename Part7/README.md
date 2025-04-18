@@ -19,4 +19,7 @@ Entre los ejercicios desarrollados estan los siguientes:
 - 7.8 Definitive Hook (paso 1: Dado que el codigo responsable de comunicarse con el backend puede ser generico, se separo en un hook propio para establecer esta comunicacion)
 
 ## Parte 7 - F
-- 7.9 Formateo automatico de codigo (El ejercicio consiste en ver la documentacion de Prettier y aplicarlo al proyecto)
+- 7.9  Bloglist: Formateo automatico de codigo (El ejercicio consiste en ver la documentacion de Prettier y aplicarlo al proyecto)
+- 7.10 Bloglist: (paso 1: Manejando la notificaciones de manera global facilmente con Zustand)
+- 7.11 Bloglist: (paso2 : Integrando React Query para controlar la administracion de los blogs desde el backend)
+- 7.12 Bloglist: (paso 3 : Administrando los blogs con Tanstack para darle likes y borrar blogs publicados)

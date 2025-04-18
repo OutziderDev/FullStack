@@ -1,13 +1,15 @@
 import { useState } from "react";
 import blogService from "../../Services/blogService";
 import PropTypes from 'prop-types';
+import { useNotificationStore } from "../../store/notificationStore";
 
-const FormAddBlog = ({setNotification,setBlogs,blogs}) => {
+const FormAddBlog = ({setBlogs,blogs}) => {
   const [title, setTitle] = useState('')
   const [url, setUrl] = useState('')
   const [author, setAuthor] = useState('')
   const [isOpen, setIsOpen] = useState(false)
-
+  const { setNotification } = useNotificationStore.getState()
+  
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   }
@@ -25,17 +27,9 @@ const FormAddBlog = ({setNotification,setBlogs,blogs}) => {
       setUrl('')
       setAuthor('')
       setBlogs(blogs.concat(blog))
-      setNotification({ message:"the new blog add succesfully", type:'success' })
-      setTimeout(() => {
-        setNotification({ message: null, type: null })
-      }, 3000);
+      setNotification("the new blog add succesfully", 'success' )  
     } catch (error) {
-      console.log(error)
-      const msgError= error.response.data.error
-      setNotification({ message: msgError, type: 'warning' })
-      setTimeout(() => {
-        setNotification({ message: null, type: null })
-      }, 3000);
+      setNotification(error.response.data.error, 'warning')
     }
   }
 
@@ -93,9 +87,7 @@ const FormAddBlog = ({setNotification,setBlogs,blogs}) => {
 
 FormAddBlog.propTypes = {
   setBlogs: PropTypes.func,
-  
   blogs:PropTypes.array,
-  setNotification: PropTypes.func
 } 
 
 export default FormAddBlog;

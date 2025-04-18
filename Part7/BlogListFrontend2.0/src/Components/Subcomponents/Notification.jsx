@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types';
+import { useNotificationStore } from '../../store/notificationStore';
 
-const Notification = ({ message ,type }) => {
-  if (message === null) {
-    return null;
-  }
+const Notification = () => {
+  const { notification} = useNotificationStore()
+  const { message, type } = notification
+
+  if (message === null) { return null; }
 
   const typeStyle = {
     warning: {
@@ -27,10 +28,5 @@ const Notification = ({ message ,type }) => {
     </div>
   )
 }
-
-Notification.propTypes = {
-    message: PropTypes.string,
-    type:PropTypes.string 
-}; 
 
 export default Notification;

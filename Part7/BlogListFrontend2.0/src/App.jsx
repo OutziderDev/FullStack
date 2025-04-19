@@ -1,59 +1,23 @@
 import Notification from './Components/Subcomponents/Notification'
-import { useNotificationStore } from './store/notificationStore'
-import { useEffect, useState } from 'react'
+import { useUserStore } from './store/userStore'
+import { useEffect } from 'react'
 import Navbar from './Components/Navbar'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import Login from './Components/Login'
 import Main from './Components/Main'
 
-import blogService from './Services/blogService'
-import loginService from './Services/loginService'
 
 function App() {
-  const [blog, setBlog] = useState(null)
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [user, setUser] = useState(null)
-  const { setNotification } = useNotificationStore.getState()
  
-  useEffect(() => {// Fetch blogs
-    const fetchBlogs = async () => {
-      const blogs = await blogService.getAll()
-      setBlog(blogs)
-    }
-    fetchBlogs()
-  },[])
-  
+  const { user,restoreUser } = useUserStore()  
+
   useEffect(() => { // Check if user is logged
-    const loggedUserJSON = window.localStorage.getItem('loggedBlogUser')
-    if (loggedUserJSON) {
-      const user = JSON.parse(loggedUserJSON)
-      setUser(user)
-    }
+    restoreUser()
   }, [])
 
-  const handleLogin = async (e) => {
-    e.preventDefault()
 
-    try {
-      const userFromLogin = await loginService.login({username, password})
-      window.localStorage.setItem('loggedBlogUser', JSON.stringify(userFromLogin)) 
-      setUser(userFromLogin)
-      setUsername('')
-      setPassword('')
-    } catch (error) {
-      setNotification(error.response.data.error, 'warning')
-    }
-   
-  } 
-
-  const handleLogout = () => {
-    window.localStorage.removeItem('loggedBlogUser')
-    setUser(null) 
-  }
-
-  if (!blog)  return 
+  /* if (!blog)  return  */
 
   return (
     <>
@@ -62,9 +26,9 @@ function App() {
         <Header/>
         <Notification />
         {!user ? (
-          <Login handleLogin={handleLogin} setUsername={setUsername} setPassword={setPassword} />
+          <Login />
           ) : (
-          <Main user={user} handleLogout={handleLogout} />
+          <Main />
           )
         }
       </section>

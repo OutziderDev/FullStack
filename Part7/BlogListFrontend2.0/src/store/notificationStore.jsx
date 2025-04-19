@@ -6,4 +6,5 @@ export const useNotificationStore = create ( (set) => ({
     set({ notification: { message, type} })
     setTimeout(() => set({ notification: { message: null, type: null}}) , 3000);
   }
-}))
+})
+)

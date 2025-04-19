@@ -3,7 +3,7 @@ import FormAddBlog from './Subcomponents/FormAddBlog';
 import UserInfo from './Subcomponents/userInfo';
 import BlogCard from './Subcomponents/blogCard';
 
-const Main = ({blogs,user,handleLogout,setBlogs}) => {
+const Main = ({user,handleLogout}) => {
 
     return(
         <div className={`grid grid-cols-1 md:grid-cols-[35%,65%] gap-2 animate-fadeIn transition-all duration-500`} >
@@ -11,11 +11,11 @@ const Main = ({blogs,user,handleLogout,setBlogs}) => {
             <aside className='dark:text-white px-2 pt-2 '>
               <UserInfo user={user} handleLogout={handleLogout}/>
               
-              <FormAddBlog  blogs={blogs} setBlogs={setBlogs}/>  
+              <FormAddBlog />  
             </aside>
             
             <section className='px-2' id='forBlogs'>
-              <BlogCard blogs={blogs} setBlog={setBlogs}/>
+              <BlogCard />
             </section>
 
           </div>

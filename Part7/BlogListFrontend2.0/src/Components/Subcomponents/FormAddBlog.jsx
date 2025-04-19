@@ -1,15 +1,22 @@
-import { useState } from "react";
-import blogService from "../../Services/blogService";
-import PropTypes from 'prop-types';
+import { useMutation, useQueryClient} from '@tanstack/react-query'
 import { useNotificationStore } from "../../store/notificationStore";
+import blogService from "../../Services/blogService";
+import { useState } from "react";
 
-const FormAddBlog = ({setBlogs,blogs}) => {
+const FormAddBlog = () => {
   const [title, setTitle] = useState('')
   const [url, setUrl] = useState('')
   const [author, setAuthor] = useState('')
   const [isOpen, setIsOpen] = useState(false)
   const { setNotification } = useNotificationStore.getState()
-  
+  const queryClient = useQueryClient()
+  const createBlogMutation = useMutation({
+    mutationFn: blogService.create,
+    onSuccess: () => {
+      queryClient.invalidateQueries({queryKey: ['blogs']})
+    }
+  })
+
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   }
@@ -22,11 +29,11 @@ const FormAddBlog = ({setBlogs,blogs}) => {
         author,
         url
       }
-      const blog = await blogService.create(newBlog)
+
+      createBlogMutation.mutate(newBlog)
       setTitle('')
       setUrl('')
       setAuthor('')
-      setBlogs(blogs.concat(blog))
       setNotification("the new blog add succesfully", 'success' )  
     } catch (error) {
       setNotification(error.response.data.error, 'warning')
@@ -84,10 +91,5 @@ const FormAddBlog = ({setBlogs,blogs}) => {
     </div>
   );
 }
-
-FormAddBlog.propTypes = {
-  setBlogs: PropTypes.func,
-  blogs:PropTypes.array,
-} 
 
 export default FormAddBlog;

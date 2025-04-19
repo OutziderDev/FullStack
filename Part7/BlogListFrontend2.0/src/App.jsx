@@ -64,7 +64,7 @@ function App() {
         {!user ? (
           <Login handleLogin={handleLogin} setUsername={setUsername} setPassword={setPassword} />
           ) : (
-          <Main blogs={blog} setBlogs={setBlog} user={user} handleLogout={handleLogout}   />
+          <Main user={user} handleLogout={handleLogout} />
           )
         }
       </section>

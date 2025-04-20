@@ -1,5 +1,6 @@
-import blogService from '../../Services/blogService'
 import { useQuery, useMutation, useQueryClient} from '@tanstack/react-query'
+import blogService from '../../Services/blogService'
+import { Link } from 'react-router-dom'
 import { useState } from "react"
 
 const BlogCard = () => {
@@ -47,7 +48,8 @@ const BlogCard = () => {
     const userData = JSON.parse(window.localStorage.getItem('loggedBlogUser'))
     
     return (        
-        blogs.map(blog => (
+        blogs.map((blog, index) => (
+          <Link to={`/blogs/${blog.id}`} key={index}>
             <article key={blog.id} className='dark:bg-gradient-to-tr from-sky-600 to-blue-900 border border-gray-300 dark:text-white dark:border-sky-400 p-4 rounded-md my-2  transition-all'>
                 <div className="flex justify-between">
                     <h2 data-testid="blogTitle" className='text-2xl font-bold'>{blog.title}</h2>
@@ -78,7 +80,7 @@ const BlogCard = () => {
                     </div>
                 </div>
 
-                <div className={`animate-fadeIn ${cardVisible === blog.id ? "block" : "hidden"} border-t p-1 mt-1`}>
+                {/* <div className={`animate-fadeIn ${cardVisible === blog.id ? "block" : "hidden"} border-t p-1 mt-1`}>
                     <p> Visita el blog en: <a href="#" className="hover:text-green-400 ml-2">{blog.url}</a> </p>
                     <p className="flex justify-between">
                         <span>Likes: <strong data-testid='viewCountLikes'>{blog.likes}</strong></span>
@@ -89,8 +91,9 @@ const BlogCard = () => {
                          </button>
                     </p>
                     <p>Publishing by: <strong>{blog.user.name}</strong></p>
-                </div>
-            </article>               
+                </div> */}
+            </article> 
+          </Link>                
         ))          
     )
 }

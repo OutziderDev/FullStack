@@ -6,10 +6,11 @@ function Navbar() {
   const { user, logout } = useUserStore()
   const [darkMode, setDarkMode] = useState(true)
 
-    const handleToggle = () => {
-        setDarkMode(!darkMode)
-        document.documentElement.classList.toggle("dark", !darkMode);
-    }
+  const handleToggle = () => {
+      setDarkMode(!darkMode)
+      document.documentElement.classList.toggle("dark", !darkMode);
+  }
+  
   return (
     <nav className="bg-slate-100 dark:bg-gray-800 shadow-md w-full animate-fadeIn transition-all duration-300 z-50 top-0 mb-2 sticky">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

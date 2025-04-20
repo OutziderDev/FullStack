@@ -26,7 +26,7 @@ const Login = () => {
 
   return(
     <div className=' translate-y-1/2'>
-      <h1 className='text-center text-6xl text-white p-4 uppercase font-bold -skew-x-6 hover:-skew-x-0 transition-all ease-in-out'>Login</h1>
+      <h1 className='text-center text-6xl text-blue-500 dark:text-white p-4 uppercase font-bold -skew-x-6 hover:-skew-x-0 transition-all ease-in-out'>Login</h1>
       
       <form onSubmit={handleLogin} id='formLogin' className="bg-blue-100 animate-fadeIn dark:bg-transparent p-5 flex flex-col max-w-xl mx-auto border-2 border-blue-300 rounded-lg shadow-md shadow-blue-300 dark:shadow-white" action="" >
         <label className='text-blue-600 font-bold dark:text-white ' htmlFor="username">Username:</label>

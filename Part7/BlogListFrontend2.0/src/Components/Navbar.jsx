@@ -69,7 +69,7 @@ function Navbar() {
               {user.name}
             </div>
 
-            <button onClick={logout} className=" text-white bg-red-500 rounded-sm px-2 py-1 hover:bg-red-600">Logout</button>
+            <button onClick={logout} className=" text-white bg-red-500 rounded-md px-2 py-1 hover:bg-red-600">Logout</button>
 
           </div>
         </div>

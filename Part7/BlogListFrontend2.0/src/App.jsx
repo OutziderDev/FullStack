@@ -1,10 +1,11 @@
  import Notification from './Components/Subcomponents/Notification'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useUserStore } from './store/userStore'
+import ViewUserDetail from './Components/ViewUserDetail'
+import ViewUser from './Components/ViewUser'
 import Navbar from './Components/Navbar'
 import Header from './Components/Header'
 import Login from './Components/Login'
-import ViewUser from './Components/ViewUser'
 import Main from './Components/Main' 
 import { useEffect } from 'react'
 
@@ -40,7 +41,9 @@ function App() {
                     <Header/>
                     <ViewUser />
                   </>  
-                  } />
+                  } 
+                />
+                <Route path='/users/:id' element={ <ViewUserDetail/> }/>
                 <Route path="/" element={
                   <>
                     <Header/>

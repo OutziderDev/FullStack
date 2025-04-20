@@ -1,12 +1,12 @@
-import Notification from './Components/Subcomponents/Notification'
+ import Notification from './Components/Subcomponents/Notification'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useUserStore } from './store/userStore'
-import { useEffect } from 'react'
 import Navbar from './Components/Navbar'
 import Header from './Components/Header'
-import Footer from './Components/Footer'
 import Login from './Components/Login'
-import Main from './Components/Main'
-
+import ViewUser from './Components/ViewUser'
+import Main from './Components/Main' 
+import { useEffect } from 'react'
 
 function App() {
  
@@ -16,24 +16,46 @@ function App() {
     restoreUser()
   }, [])
 
-
   /* if (!blog)  return  */
 
   return (
-    <>
-      <Navbar/>
-      <section className='container mx-auto mt-3'>
-        <Header/>
-        <Notification />
+    
+     <>
+      <section className='w-full h-full'>
         {!user ? (
-          <Login />
+          <>
+            <Login />
+            <br />
+            <br />
+            <Notification />
+          </>
           ) : (
-          <Main />
-          )
+          <Router>
+            <Navbar/>
+          
+            <div className='container mx-auto '>
+              <Routes>
+                <Route path="/users" element={
+                  <>
+                    <Header/>
+                    <ViewUser />
+                  </>  
+                  } />
+                <Route path="/" element={
+                  <>
+                    <Header/>
+                    <Notification />
+                    <Main />
+                  </>  
+                } />
+              </Routes>
+            </div >
+          </Router>)
+          
         }
       </section>
-      <Footer/>
-    </>
+{/*       <Footer/>
+ */}    </> 
   )
 }
 

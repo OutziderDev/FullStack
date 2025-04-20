@@ -1,11 +1,11 @@
 const Header = () => {
     return (
-        <header className='shadow-botton dark:shadow-sky-400 tray mb-5 m-2'>
+      <header className='border-b-4 dark:border-sky-400 tray mb-5'>
 
-            <h1 className='font-bold text-center  uppercase text-blue-600 dark:text-sky-400 text-7xl text-balance p-2'>Frontend Blog List for Blog API R<span className='lowercase'>est</span> </h1>
-            <p className="text-center text-lg text-sky-100 p-2">Development with Tailwind</p>
+          <h1 className='font-bold text-center  uppercase text-blue-600 dark:text-sky-400 text-7xl text-balance p-2'> Blog App</h1>
+          <p className="text-center text-lg font-bold text-sky-100 p-2"> <strong>By:</strong> University of Hellsinki</p>
 
-        </header>
+      </header>
     )
 }
 

@@ -1,7 +1,8 @@
- import Notification from './Components/Subcomponents/Notification'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { useUserStore } from './store/userStore'
+import Notification from './Components/Subcomponents/Notification'
+import ViewBlogDetails from './Components/ViewBlogDetails'
 import ViewUserDetail from './Components/ViewUserDetail'
+import { useUserStore } from './store/userStore'
 import ViewUser from './Components/ViewUser'
 import Navbar from './Components/Navbar'
 import Header from './Components/Header'
@@ -51,6 +52,7 @@ function App() {
                     <Main />
                   </>  
                 } />
+                <Route path='/blogs/:id' element={ <ViewBlogDetails/>} />
               </Routes>
             </div >
           </Router>)

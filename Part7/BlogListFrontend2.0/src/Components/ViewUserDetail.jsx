@@ -1,5 +1,6 @@
 import { useQueryClient } from "@tanstack/react-query"
 import { useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const ViewUserDetail = () => {
   const { id } = useParams()
@@ -8,7 +9,7 @@ const ViewUserDetail = () => {
   const users= queryClient.getQueryData(['users'])
 
   if (!users) {
-    return <p className="text-4xl text-center font-bold pt-52 dark:text-sky-400">Loading users from cache...</p>  // ⚡ en caso de que aún no estén
+    return <p className="text-4xl text-center font-bold pt-52 dark:text-sky-400">Loading users from cache...</p>  
   }
   const user = users.find( user => user.id.toString() === id)
   
@@ -27,11 +28,13 @@ const ViewUserDetail = () => {
       <section className="max-w-3xl mx-auto">
         <h1 className="my-8 text-5xl dark:text-sky-500 font-bold">Blog List: </h1>
         <div className="flex flex-col gap-4 pb-52">
-          { user.blogs.map(blog => (
-              <div key={blog.id} className="cursor-pointer  bg-gradient-to-tr from-slate-300 dark:bg-gradient-to-tr dark:from-sky-600 dark:to-sky-400 p-4 group rounded-sm flex  items-center justify-between">
-                <h2 className="text-2xl font-bold dark:text-white">{blog.title}</h2>
-                <svg className="size-10 group-hover:-rotate-45 transition-all dark:stroke-white"  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
-              </div>
+          { user.blogs.map((blog,index) => (
+              <Link to={`/blogs/${blog.id}`} key={index}>
+                <div key={blog.id} className="cursor-pointer  bg-gradient-to-tr from-slate-300 dark:bg-gradient-to-tr dark:from-sky-600 dark:to-sky-400 p-4 group rounded-sm flex  items-center justify-between">
+                  <h2 className="text-2xl font-bold dark:text-white">{blog.title}</h2>
+                  <svg className="size-10 group-hover:-rotate-45 transition-all dark:stroke-white"  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor"  stroke="currentColor"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
+                </div>
+              </Link> 
             ))
           }
         </div>      

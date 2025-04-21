@@ -36,9 +36,16 @@ const ViewBlogDetails = () => {
 
       </div>
 
-      {/* <div className="dark:text-white text-3xl font-bold mt-5" >
+      <div className="dark:text-white text-3xl font-bold mt-5" >
         Comments: 
-      </div> */}
+        <ul className="flex w-full flex-col  gap-2">
+          {blog.commemts.map((comment, index) => (
+            <li key={index} className="border-2 border-sky-500 p-2 mt-2 rounded-md">
+              • {comment}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }

@@ -8,7 +8,8 @@ const BlogCard = () => {
     const [cardVisible,setCardVisible] = useState(null)
     const { data: blogs, isLoading, isError } =  useQuery({
       queryKey: ['blogs'],
-      queryFn: blogService.getAll
+      queryFn: blogService.getAll,
+      staleTime: 0
     })  
 
     const handleCardVisibility = (id) => {

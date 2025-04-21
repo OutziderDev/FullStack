@@ -15,6 +15,15 @@ const create = async newBlog => {
   return response.data
 }
 
+const addComment = async (newComment, id) => {
+  const config ={
+    headers:{ Authorization: `Bearer ${JSON.parse(window.localStorage.getItem('loggedBlogUser')).token}`}
+  }
+
+  const response = await axios.post(`${baseUrl}/${id}/comments`,newComment,config)
+  return response.data
+}
+
 const update = async (id,updateBlog) => {
   const response = await axios.put(`${baseUrl}/${id}`,updateBlog)
   return response.data
@@ -29,4 +38,4 @@ const deleteBlog = async (id) => {
 }
 
 
-export default {getAll , create, update, deleteBlog }
+export default {getAll , create, update, deleteBlog,addComment }

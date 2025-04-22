@@ -1,6 +1,15 @@
-## Part 7 - F
+## Parte 7 - F
 
-- 7.9 Code Formatting (Instalando la herramienta de Prettier para formatear el codigo con las mejores practicas)
-- 7.10 Bloglist: (paso 1: Manejando la notificaciones de manera global facilmente con Zustand)
-- 7.11 Bloglist: (paso 2 : Integrando React Query para controlar la administracion de los blogs desde el backend)
-- 7.12 Bloglist: (paso 3 : Administrando los blogs con Tanstack para darle likes y borrar blogs publicados)
+- 7.9  Bloglist: Formateo automatico de codigo (El ejercicio consiste en ver la documentacion de Prettier y aplicarlo al proyecto)
+- 7.10 Bloglist (paso 1: Manejando la notificaciones de manera global facilmente con Zustand)
+- 7.11 Bloglist (paso 2: Integrando React Query para controlar la administracion de los blogs desde el backend)
+- 7.12 Bloglist (paso 3: Administrando los blogs con Tanstack para darle likes y borrar blogs publicados)
+- 7.13 Bloglist (paso 4: Administrando los datos de inicio de sesion con Zustand)
+- 7.14 Bloglist Vistas (paso 1: Creando una nueva vista para mostrar los usuarios y la cantidad de blog)
+- 7.15 Bloglist Vistas (paso 2: Viendo los datos individuales por usuarios con el paso del id y useParams)
+- 7.16 Bloglist Vistas (paso 3: Generando una pagina para la vista de los datos individuales de cada blog por separado)
+- 7.17 Bloglist ReatRouter (paso 1: Aplicando un menu en la pagina web para navegar entre las pestañas con las routes)
+- 7.18 Bloglist Comments (paso 1: Creando un nuevo endpoint y modelo en mongoose para agregar comentarios a cada blog)
+- 7.19 Bloglist Comments (paso 2: Uilizando el nuevo endpoint para generar los comentarios desde el frontend)
+- 7.20 Bloglist Styles (paso 1: Agregando Css a toda la pagina web)
+- 7.21 Bloglist Styles (paso 2: Instalando tailwindcss y estilando toda la pagina web en light y dark mode)

@@ -15,3 +15,5 @@ Entre los ejercicios desarrollados estan los siguientes:
 - 9.7 Express/Gym (paso 3: Agregando un endpoint para utilizar la calculadora del gym con un request tipo post)
 
 ## Parte 9 - C
+- 9.8 Patientor backend (Excersise realized in: [patientor-backend](https://github.com/fullstack-hy2020/patientor.git))
+- 9.9 Patientor backennd (create clone of frontend project and connecting with the api in ts)

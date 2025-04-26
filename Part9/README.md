@@ -15,5 +15,8 @@ Entre los ejercicios desarrollados estan los siguientes:
 - 9.7 Express/Gym (paso 3: Agregando un endpoint para utilizar la calculadora del gym con un request tipo post)
 
 ## Parte 9 - C
-- 9.8 Patientor backend (Excersise realized in: [patientor-backend](https://github.com/fullstack-hy2020/patientor.git))
-- 9.9 Patientor backennd (create clone of frontend project and connecting with the api in ts)
+### El desarrollo de estos ejercicios se encuentra la mayoria en la carpeta [patientor-backend](https://github.com/OutziderDev/FullStack-Backend/tree/main/Patientor-Backend)
+- 9.8  Patientor backend (Excersise realized in: [patientor-backend](https://github.com/OutziderDev/FullStack-Backend/tree/main/Patientor-Backend))
+- 9.9  Patientor backend (create clone of frontend project and connecting with the api in ts)
+- 9.10 *In* Patientor backend (paso 3: creando el type Diangoses para asignarle a los datos de diagnostico, creando los servicios y endpoint)
+- 9.11 *In* Patientor backend (paso 4: generando el type Patients con el type utility junto a un endpoint para servir datos seleccionados)

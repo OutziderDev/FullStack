@@ -15,8 +15,13 @@ Entre los ejercicios desarrollados estan los siguientes:
 - 9.7 Express/Gym (paso 3: Agregando un endpoint para utilizar la calculadora del gym con un request tipo post)
 
 ## Parte 9 - C
-### El desarrollo de estos ejercicios se encuentra la mayoria en la carpeta [patientor-backend](https://github.com/OutziderDev/FullStack-Backend/tree/main/Patientor-Backend)
-- 9.8  Patientor backend (Excersise realized in: [patientor-backend](https://github.com/OutziderDev/FullStack-Backend/tree/main/Patientor-Backend))
-- 9.9  Patientor backend (create clone of frontend project and connecting with the api in ts)
+#### El desarrollo de estos ejercicios se encuentra la mayoria en la carpeta [patientor-backend](https://github.com/OutziderDev/FullStack-Backend/tree/main/Patientor-Backend)
+- 9.8  Patientor backend (paso 1: Excersise realized in: [patientor-backend](https://github.com/OutziderDev/FullStack-Backend/tree/main/Patientor-Backend))
+- 9.9  Patientor backend (paso 2: create clone of frontend project and connecting with the api in ts)
 - 9.10 *In* Patientor backend (paso 3: creando el type Diangoses para asignarle a los datos de diagnostico, creando los servicios y endpoint)
 - 9.11 *In* Patientor backend (paso 4: generando el type Patients con el type utility junto a un endpoint para servir datos seleccionados)
+- 9.12 *In* Patientor backend (paso 5: implementando un endpoint para guardar pacientes via Post )
+- 9.13 *In* Patientor backend (paso 6: validando los datos y creando guardia de tipos para recibir datos tipados del body de las request)
+
+## Part 9 - D
+- 9.14 App React TypeScript ( paso 1: creando la primer aplicacion de react pero con tipado componentes con typescript)

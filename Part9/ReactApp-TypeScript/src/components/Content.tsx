@@ -1,15 +1,7 @@
 import { JSX } from "react";
+import { CoursePart } from "../types/CoursePart";
 
-interface CoursePart {
-  name: string;
-  exerciseCount: number;
-}
-
-interface CoursePartProps {
-  data: CoursePart[];
-}
-
-const Context = ({data}: CoursePartProps) : JSX.Element => {
+const Context = ({data}: { data: CoursePart[]}) : JSX.Element => {
   
   return(
     <>

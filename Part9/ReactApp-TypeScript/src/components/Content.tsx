@@ -1,14 +1,18 @@
-import { JSX } from "react";
 import { CoursePart } from "../types/CoursePart";
+import { JSX } from "react";
+import Part from "./Part";
 
 const Context = ({data}: { data: CoursePart[]}) : JSX.Element => {
   
   return(
     <>
       {data.map((part, index) => (
-        <p key={index}>
-          {part.name}: {part.exerciseCount}
-        </p>
+        <div>
+          <b key={index}>
+            {part.name}: {part.exerciseCount}
+          </b>
+          <Part part={part} />
+        </div>
       ))}
     </>
   )

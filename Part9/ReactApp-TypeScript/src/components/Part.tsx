@@ -28,12 +28,19 @@ const Part = ({ part }: { part: CoursePart }): JSX.Element => {
           <br /> 
         </i>        
       )
+    
+    case "special":
+      return (
+        <i>
+          <div>{part.description}</div>
+          <div>required skills: {part.requirements.join(", ")}</div>    
+          <br /> 
+        </i>        
+      )
 
     default:
-      break;
+      return ( <h3> </h3>)
   }
-
-  return ( <h3> nothing</h3>)
   
 }
 

@@ -11,8 +11,8 @@ function App() {
     const fetchDiaries = async () => {
       try {
         const response = await DiaryService.getDiaries()
-        console.log(response);
-        
+/*         console.log(response);
+ */        
         setDiaries(response)
       } catch (error) {
         console.error("Error fetching diaries:", error)

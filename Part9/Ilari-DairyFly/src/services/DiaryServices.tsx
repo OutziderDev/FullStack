@@ -10,5 +10,23 @@ const getDiaries = async (): Promise<DairyEntry[]> => {
   const data = await response.json()
   return data
 }
+/* : Promise<DairyEntry> */
+const addDairy = async (data : unknown) => {
+  const response = await fetch(baseURL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
 
-export default { getDiaries}
+  if (!response.ok) {
+    const errorMessage = await response.text()
+    throw new Error(`Error adding diary: ${errorMessage}`)
+  }
+
+  const newEntry = await response.json()
+  return newEntry
+}
+
+export default { getDiaries, addDairy}

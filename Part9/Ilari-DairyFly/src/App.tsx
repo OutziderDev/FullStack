@@ -23,7 +23,7 @@ function App() {
   // 
   return (
     <div className="flex flex-col md:flex-row max-w-7xl mx-auto  pt-10 ">
-      <Aside/>
+      <Aside modDiaries={setDiaries} alldiaries={diaries}/>
       
       <Diary allDiary={diaries}/>
     </div>

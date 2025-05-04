@@ -1,36 +1,45 @@
 import { Visibility } from "../types/VisibilityType"; 
 import DairyService  from '../services/DiaryServices';
-import { DairyEntry } from "../types/DairyEntryType";
-import React, { SyntheticEvent, useState } from "react";
+/* import { DairyEntry } from "../types/DairyEntryType";
+ */
+import  { SyntheticEvent, useState } from "react";
 import { Weather } from "../types/WeatherType";
 
-interface AsideProps {
-  alldiaries: DairyEntry
-  modDiaries: React.Dispatch<React.SetStateAction<DairyEntry[]>>
-}
+/* interface AsideProps {
+  alldiaries: DairyEntry[]
+  modDiaries: React.Dispatch<React.SetStateAction<DairyEntry>>
+} */
 
-const Aside = ({alldiaries,modDiaries}: AsideProps) => {
+const Aside = () => {
   const [date,setDate] = useState<string>('')
-  const [visibility,setVisibility] = useState<Visibility | ''>('')  
-  const [weather, setWeather] = useState<Weather | ''>('')
-  const [comment, setComment] = useState<string>('')
+  const [visibility,setVisibility] = useState<Visibility >('poor')  
+  const [weather, setWeather] = useState<Weather >('cloudy')
+  const [comment, setComment] = useState<string>()
+  const [notification, setNoitification] = useState("")
 
-  const dairyCreation = (e : SyntheticEvent) => {
-    e.preventDefault()
-    const data = {
-      date,
-      visibility,
-      weather,
-      comment
-    }
+  const dairyCreation = async (e : SyntheticEvent) => {
+    try {
+      e.preventDefault()
+      const data = {
+        date,
+        visibility,
+        weather,
+        comment
+      }
 
-    const newDiary = DairyService.addDairy(data)
-    modDiaries(alldiaries.concat(newDiary) )
+      await DairyService.addDairy(data)
+      
     
-    setComment('')
-    setWeather('')
-    setVisibility('')
-    setDate('')
+      setComment('')
+      setWeather('cloudy')
+      setVisibility('good')
+      setDate('')
+    } catch (error) {
+      if (error instanceof Error) {
+        setNoitification(`Error: ${error.message}`)
+      }
+    }
+    
     
   }
 
@@ -39,8 +48,8 @@ const Aside = ({alldiaries,modDiaries}: AsideProps) => {
       <div className="w-full md:w-2/5 h-full p-4 md:sticky md:top-0">
         <h2 className="font-bold text-3xl font-sans text-center">Add New Entry</h2>
 
-        <div className="bg-red-300 hidden mt-5 text-red-500 text-xl font-semibold py-2 px-4 mask-r-from-10% border-l-8 ">
-          Error: paso
+        <div className="bg-red-300  mt-5 text-red-500 text-xl font-semibold py-2 px-4  border-l-8 ">
+          {notification === "" ? '' : notification}
         </div>
 
         <form onSubmit={dairyCreation} className="mt-3 w-full">

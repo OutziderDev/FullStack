@@ -10,9 +10,7 @@ function App() {
   useEffect( () => {
     const fetchDiaries = async () => {
       try {
-        const response = await DiaryService.getDiaries()
-/*         console.log(response);
- */        
+        const response = await DiaryService.getDiaries()       
         setDiaries(response)
       } catch (error) {
         console.error("Error fetching diaries:", error)

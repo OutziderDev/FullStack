@@ -1,9 +1,9 @@
-import FemaleIcon from '@mui/icons-material/Female';
 import patientsService from '../../services/patients';
 import { useParams } from "react-router-dom";
 import { Typography } from "@mui/material";
 import { useEffect, useState } from 'react';
 import { Patient } from '../../types';
+import {genderIcon} from '../../utils/genderIcon';
 
 const ViewPatientData = () => {
   const {id} = useParams();
@@ -22,12 +22,14 @@ const ViewPatientData = () => {
     };
     fetchPatientById();
   },[id]);
+
+  const genderIcono = genderIcon(patient?.gender);
   
   return (
     <>
       <Typography variant="h2" style={{ marginTop: "0.5em", fontWeight: "bold" }}>
         {patient?.name} 
-        <FemaleIcon sx={{fontSize: 60, alignItems:'center'}} color='error'/>
+        {genderIcono}
       </Typography>
 
       <div>

@@ -54,12 +54,14 @@ const AddPatientForm = ({ onCancel, onSubmit }: Props) => {
           label="Name"
           fullWidth 
           value={name}
+          style={{marginBottom:5}}
           onChange={({ target }) => setName(target.value)}
         />
         <TextField
           label="Social security number"
           fullWidth
           value={ssn}
+          style={{marginBottom:5}}
           onChange={({ target }) => setSsn(target.value)}
         />
         <TextField
@@ -67,6 +69,7 @@ const AddPatientForm = ({ onCancel, onSubmit }: Props) => {
           placeholder="YYYY-MM-DD"
           fullWidth
           value={dateOfBirth}
+          style={{marginBottom:5}}
           onChange={({ target }) => setDateOfBirth(target.value)}
         />
         <TextField
@@ -76,11 +79,12 @@ const AddPatientForm = ({ onCancel, onSubmit }: Props) => {
           onChange={({ target }) => setOccupation(target.value)}
         />
 
-        <InputLabel style={{ marginTop: 20 }}>Gender</InputLabel>
+        <InputLabel style={{ marginTop: 10 }}>Gender</InputLabel>
         <Select
           label="Gender"
           fullWidth
           value={gender}
+          style={{marginBottom:10}}
           onChange={onGenderChange}
         >
         {genderOptions.map(option =>

@@ -2,13 +2,33 @@
 
 Este repositorio está dedicado a almacenar todas las prácticas realizadas durante el programa FullStack de la Universidad de Helsinki. La estructura de carpetas consiste en una carpeta principal para cada módulo del curso, y cada una de estas se subdivide en subcarpetas que contienen las actividades enumeradas según lo solicitado en el curso. En cada carpeta se detallan los ejercicios realizados, proporcionando una organización clara y accesible para el estudio.
 
-### Partes Desarrolladas
-- Parte 0, Reforzando conocimientos de consola web y diferentes utilidades. 
-- Parte 1, Practicando con React, variables de estado, controles de eventos y desestructuración. 
-- Parte 2, Practicando con el llamado de APIs externas y mostrando datos directo desde el servidor con <Axio>, <useEffect>, APIs externas, etc.
-- Parte 3, Practicando en backend creando una APIRest con Express, creando las rutas, creando Middlewares, manejo de errores, Aplicacion de Cors,ESlint entre otras.
-- Parte 4, Creando test para el backend con Node:Test y aprendiendo a integrar la administracion de usuarios junto a la autentificacion basadas en Tokens.
-- Parte 5, Practicando con React entre ellas el Auth, las props children y prototypes, sumado a esto se practica con Playwright E2E
-- Parte 6, Seccion de Manejo de los estados Globales implementando Redux, React Query, useReducer y el Context.
-- Parte 7, Agregando navegacion con React con el React router y Hooks personalizados, Practicando con estilos enlinea y otros componentes de clase y miscelaneos.
-- Parte 9, Apartado de practicas de Typescrip tanto en React para el Front end como aplicando tipeado de datos en Express para la parte del backend con Express.
+## Partes Desarrolladas:
+
+- **Parte 0 — Fundamentos de la Web:**
+  Reforzando conocimientos sobre la consola del navegador, herramientas de desarrollo y conceptos fundamentales de la Web.
+
+- **Parte 1 — React:**
+  Practicando con React, variables de estado, manejo de eventos, componentes y desestructuración.
+
+- **Parte 2 — Comunicación con el servidor:**
+  Trabajando con APIs externas y aprendiendo a obtener, procesar y mostrar datos desde el servidor.
+
+- **Parte 3 — Programación del servidor:**
+  Creando una API REST con Express, definiendo rutas, implementando middlewares, manejo de errores, CORS y ESLint, entre otras herramientas.
+
+- **Parte 4 — Testing y autenticación:**
+  Creando pruebas para el backend utilizando `Node:test` e implementando administración de usuarios y autenticación basada en tokens.
+
+- **Parte 5 — Testing del frontend:**
+  Profundizando en React mediante el uso de `children`, props y prototipos, además de realizar pruebas End-to-End (E2E) utilizando Playwright.
+
+- **Parte 6 — Gestión de estados:**
+  Trabajando con diferentes estrategias para manejar el estado de las aplicaciones mediante Redux, React Query, `useReducer` y Context API.
+
+- **Parte 7 — React Router y conceptos avanzados:**
+  Implementando navegación con React Router, creando Hooks personalizados y practicando con estilos en línea, componentes de clase y otros conceptos de React.
+
+- **Parte 9 — TypeScript:**
+  Practicando TypeScript tanto en el frontend con React como en el backend con Express, aplicando tipado estático a diferentes partes de la aplicación.
+
+- **Parte 13 — Base de datos relacionales:**
